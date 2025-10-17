@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MIDE — Open, agentic IDE for Obsidian</title>
-  <meta name="description" content="MIDE — an open, community-driven agentic IDE for Obsidian. Packs, flow chaining, SDK, verification, and mission-driven donations." />
-  <meta property="og:title" content="MIDE — Open, agentic IDE for Obsidian" />
-  <meta property="og:description" content="Community component packs. Flow chaining. An SDK with guardrails. Verified packs. Join the MIDE Mission." />
+  <meta name="description" content="MIDE — An open, community-driven agentic framework built atop Obsidian." />
+  <meta property="og:title" content="MIDE — An open, community-driven agentic framework built atop Obsidian." />
+  <meta property="og:description" content="Community-developed component packs with verification. Procedural workflow chaining. Seamless context engineering. Guardrailed SDK. Join the MIDE Mission." />
   <!-- Optional: add your social image -->
   <!-- <meta property="og:image" content="https://YOUR-USER.github.io/mide-site/og.png" /> -->
   <meta property="og:type" content="website" />
@@ -60,6 +60,31 @@
     .mute{color:var(--sub)}
     .note{font-size:13px;color:#94a3b8}
     code{background:#0b1220;border:1px solid #1f2937;padding:2px 6px;border-radius:8px}
+    /* Highlight Join the MIDE Mission */
+    .mide-mission {
+      display: block;
+      margin: 28px 0 0 0;
+      text-align: center;
+      font-size: 1.34em;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      padding: 8px 0 8px 0;
+      border-radius: 14px;
+      box-shadow: 0 1.5px 12px 0 rgba(56,189,248,0.10);
+      border: none;
+      cursor: pointer;
+      transition: filter 0.15s;
+      text-shadow: 0 0 10px rgba(56,189,248,0.08), 0 1px 2px #05101a44;
+      user-select: none;
+    }
+    .mide-mission:hover, .mide-mission:focus {
+      filter: brightness(1.2) drop-shadow(0 0 8px var(--brand2));
+      text-shadow: 0 0 16px var(--brand2), 0 2px 6px var(--brand2);
+    }
     @media (max-width:980px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
   </style>
   <script>
@@ -98,6 +123,7 @@
         nodes.forEach(el=>{ if(v) el.setAttribute('href', v); });
       }
       document.getElementById('yr').textContent = new Date().getFullYear();
+      // Optional: "Join the MIDE Mission" scroll/button action could be added here if needed.
     });
   </script>
 </head>
@@ -131,6 +157,7 @@
             Stupid-simple development for brilliant functionality.
           </span>
         </p>
+        <a href="#community" class="mide-mission">🚀 Join the MIDE Mission</a>
         <div class="btns">
           <a class="btn primary" data-link="INSTALL_URL">⬇️ Install MIDE</a>
           <a class="btn" data-link="DOCS_URL">📘 Docs</a>
@@ -143,6 +170,7 @@
           <span class="pill">SDK with guardrails</span>
           <span class="pill">Verified packs</span>
           <span class="pill">Easy updating across all Community Plugin packs</span>
+          <span class="pill">⚡️ Smart, lightning-fast agent contextualization</span>
         </div>
       </div>
       <div class="panel figure">
@@ -164,6 +192,18 @@
           <div class="kicker">Knowledge</div>
           <h3>Infinite context engineering</h3>
           <p class="mute">Your Obsidian vault becomes the single source of truth for PKM-powered workflows.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Contextualization</div>
+          <h3>Smart, lightning-fast agent context ⚡️</h3>
+          <p class="mute">
+            MIDE delivers blazing fast, contextually aware documentation and agent context injection — so your agents always have exactly the right information about MIDE components, without duplicating data or wasting tokens. This means less confusion, quicker results, and lower costs for power users and professionals alike.
+          </p>
+          <ul class="list">
+            <li>⚡ Avoids duplicated context — no wasted API calls or repeated docs.</li>
+            <li>🧠 Agent prompts are dynamically generated, always up-to-date.</li>
+            <li>💸 Reduces cost by shrinking unnecessary and redundant context windows.</li>
+          </ul>
         </div>
         <div class="card">
           <div class="kicker">Community</div>
@@ -224,6 +264,7 @@
             <li><b>Only use an agent when reasoning is required.</b> If a step is mechanical, run it as a flow.</li>
             <li><b>Engineer better context.</b> Rich vault context makes it harder for agents to go off-track.</li>
             <li><b>Chain small, reliable steps.</b> Deterministic sub-flows beat a single giant prompt.</li>
+            <li><b>Efficient context, always:</b> MIDE automatically avoids duplicate documentation or redundant agent context, so you don’t pay more for pointless repetition.</li>
           </ul>
           <p class="note">Bottom line: smarter flow design = fewer tokens burned.</p>
         </div>
@@ -234,6 +275,7 @@
             <li>Prefer structured prompts + validators to reduce retries.</li>
             <li>Route tasks: local code → flows → agent only when needed.</li>
             <li>Share reusable flows across packs to amortize cost.</li>
+            <li>Smart context injection tailored for the right host and prompt—never duplicate what you don't need!</li>
           </ul>
         </div>
       </div>
