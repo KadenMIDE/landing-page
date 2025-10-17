@@ -106,8 +106,7 @@
     <!-- Top Nav -->
     <div class="nav">
       <div class="logo">
-        <div class="logo-badge">M</div>
-        <div>MIDE</div>
+        <img src="logo.png" alt="MIDE Logo" style="height:100px">
       </div>
       <div style="display:flex;gap:16px">
         <a href="#value">Value</a>
@@ -126,7 +125,12 @@
         <span class="beta">In Beta • open-source & community-driven</span>
         <h1 class="h1">The agentic IDE for Obsidian — built for <span style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">flow-chaining</span> and community packs</h1>
         <p class="lead">MIDE is an open, OS-like layer inside Obsidian. Chain components across packs, run through an Agent or by hand, wire limitless context from your vault, and grow it with the community!</p>
-        <p class="callout">MIDE isn't only designed to be used — it's designed to be <b>BUILT</b>!</p>
+        <p class="callout">
+          MIDE isn't only designed to be used — it's designed to be <b>BUILT</b>!<br>
+          <span style="color:var(--brand2)">
+            Stupid-simple development for brilliant functionality.
+          </span>
+        </p>
         <div class="btns">
           <a class="btn primary" data-link="INSTALL_URL">⬇️ Install MIDE</a>
           <a class="btn" data-link="DOCS_URL">📘 Docs</a>
@@ -138,6 +142,7 @@
           <span class="pill">Obsidian-native</span>
           <span class="pill">SDK with guardrails</span>
           <span class="pill">Verified packs</span>
+          <span class="pill">Easy updating across all Community Plugin packs</span>
         </div>
       </div>
       <div class="panel figure">
@@ -162,13 +167,18 @@
         </div>
         <div class="card">
           <div class="kicker">Community</div>
-          <h3>Packs, not plugins (only)</h3>
-          <p class="mute">"MIDE packs" are Obsidian plugins chalk full of MIDE components! Discover via <code>obsidian-mide-pack</code> topic, install from MIDE's in-app Pack Browser, via GitHub's one-click deep links, or even MIDE packs registered in Obsidian Community Plugin Store.</p>
+          <h3>Packs, not just plugins</h3>
+          <p class="mute">
+            "MIDE packs" are Obsidian plugins filled with MIDE components!
+            Discover and install via the <code>obsidian-mide-pack</code> topic, from MIDE's in-app Pack Browser, 
+            with GitHub deep links, or directly in the Community Plugin Store.<br>
+            <b>Updating is simple:</b> One-click updates for all your MIDE packs through the familiar Obsidian plugins interface.
+          </p>
         </div>
         <div class="card">
-          <div class="kicker">Intuitive</div>
-          <h3>Intuitive authoring</h3>
-          <p class="mute">Markdown-first authoring with one markdown per component—yet designed for systems of interactive components.</p>
+          <div class="kicker">Development</div>
+          <h3>Stupid-simple to build, brilliant in results</h3>
+          <p class="mute">Focus on functionality, not boilerplate—MIDE's SDK, templates, and authoring tools help anyone—from power users to devs—create new automations, flows, and components with almost no friction.</p>
         </div>
         <div class="card">
           <div class="kicker">Security</div>
@@ -255,7 +265,7 @@
           <div class="kicker">Pack</div>
           <h3><a data-link="REPO_MIDE_PACK_DEV">mide-pack-dev</a></h3>
           <p class="mute">The official MIDE pack for <b>developing MIDE packs</b>, leveraging advanced self-development techniques.
-            Use it to scaffold, validate, and iterate on packs quickly.</p>
+            Use it to scaffold, validate, and iterate on packs quickly. For developers, this means adding new brilliance to the ecosystem is as easy as forking and editing a pack—no heavy dev environment needed!</p>
           <div class="meta">
             <span class="tag">Private (beta)</span>
             <span class="tag">TypeScript</span>
@@ -314,12 +324,12 @@
         <div class="card">
           <div class="kicker">Discovery</div>
           <h3>Find packs fast</h3>
-          <p class="mute">Search GitHub topic <code>obsidian-mide-pack</code>, or install by URL. Verified packs are listed in-app.</p>
+          <p class="mute">Search GitHub topic <code>obsidian-mide-pack</code>, or install by URL. Verified packs are listed in-app. Plus, any MIDE-enabled pack that appears in Obsidian's Community Plugins can be updated simply alongside your other plugins—no extra tools needed!</p>
         </div>
         <div class="card">
           <div class="kicker">Publish</div>
           <h3>Zero hosting</h3>
-          <p class="mute">Ship as an Obsidian plugin with a <code>mide/</code> folder & <code>mide-pack.json</code>. GitHub Releases handle updates.</p>
+          <p class="mute">Ship as an Obsidian plugin with a <code>mide/</code> folder & <code>mide-pack.json</code>. GitHub Releases handle updates, and Obsidian Community Plugin registry ensures simple updating for users.</p>
         </div>
       </div>
       <div class="panel" style="margin-top:12px">
@@ -374,7 +384,7 @@
         </div>
         <div class="card">
           <h3>How do packs update?</h3>
-          <p class="mute">They’re Obsidian plugins. Updates ship via GitHub Releases; MIDE reads <code>mide-pack.json</code>.</p>
+          <p class="mute">MIDE packs are full Obsidian plugins, so they update seamlessly through GitHub Releases and the Community Plugin interface — so updating all your MIDE-powered automations in a single click feels natural.</p>
         </div>
         <div class="card">
           <h3>Will my components break?</h3>
