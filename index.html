@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MIDE — Open, agentic IDE for Obsidian</title>
+  <meta name="description" content="MIDE — an open, community-driven agentic IDE for Obsidian. Packs, flow chaining, SDK, verification, and mission-driven donations." />
+  <meta property="og:title" content="MIDE — Open, agentic IDE for Obsidian" />
+  <meta property="og:description" content="Community component packs. Flow chaining. An SDK with guardrails. Verified packs. Join the MIDE Mission." />
+  <!-- Optional: add your social image -->
+  <!-- <meta property="og:image" content="https://YOUR-USER.github.io/mide-site/og.png" /> -->
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b0f14; --muted:#111827; --card:#0f172a; --text:#e5e7eb; --sub:#9ca3af;
+      --brand:#38bdf8; --brand2:#a78bfa; --ok:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+      --ring:rgba(56,189,248,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:linear-gradient(180deg,#0b0f14 0%,#0b0f14 60%,#070a0f 100%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo-badge{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;font-weight:800}
+    .nav a{opacity:.9}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:36px 0 8px}
+    .beta{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,.12);border:1px solid var(--ring);
+      color:var(--brand);padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+    .h1{font-size:44px;line-height:1.05;margin:14px 0 8px;font-weight:800}
+    .lead{color:var(--sub);font-size:18px;line-height:1.55;max-width:60ch}
+    .callout{margin:8px 0 0;border-left:3px solid var(--brand);padding:6px 12px;font-weight:700}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid #1f2937;background:#0b1220}
+    .btn:hover{border-color:#334155}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#05101a;border-color:transparent;font-weight:800}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+    .pill{font-size:12px;border:1px solid #1f2937;border-radius:999px;padding:6px 10px;color:var(--sub)}
+    .panel{background:rgba(2,6,23,.6);border:1px solid #111827;border-radius:16px;padding:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .sec{padding:36px 0}
+    .sec h2{font-size:28px;margin:0 0 10px}
+    .card{background:linear-gradient(180deg,rgba(15,23,42,.8),rgba(15,23,42,.6));border:1px solid #111827;border-radius:16px;padding:18px}
+    .card h3{margin:0 0 6px}
+    .kicker{color:var(--brand);font-weight:700;font-size:13px;letter-spacing:.6px;text-transform:uppercase}
+    .list{margin:8px 0 0;padding:0 0 0 18px;color:var(--sub)}
+    .list li{margin:6px 0}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:8px;background:#0b1220;border:1px solid #1f2937;color:#9aa4b2}
+    .cost{display:flex;align-items:center;gap:10px}
+    .bar{position:relative;height:10px;border-radius:999px;background:#0b1220;border:1px solid #1f2937;overflow:hidden}
+    .bar>i{position:absolute;inset:0;background:linear-gradient(90deg,var(--ok),var(--brand));transform:scaleX(.3);transform-origin:left}
+    .foot{opacity:.7;font-size:13px;padding:18px 0 48px}
+    .figure{min-height:180px;border-radius:16px;border:1px dashed #1f2937;display:grid;place-items:center;color:#64748b;background:rgba(2,6,23,.35)}
+    .mute{color:var(--sub)}
+    .note{font-size:13px;color:#94a3b8}
+    code{background:#0b1220;border:1px solid #1f2937;padding:2px 6px;border-radius:8px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
+  </style>
+  <script>
+    // —— minimal config so you can wire things without editing the markup —— //
+    const MIDE_CONFIG = {
+      DOCS_URL: "#TODO-docs",
+      INSTALL_URL: "#TODO-install",          // e.g. Community plugin entry or repo README
+      DEMO_URL: "#TODO-demo",                // a short demo video or GIF
+      SPONSOR_URL: "https://github.com/sponsors/KadenMc",
+      ADV_URI_INSTALL: "obsidian://advanced-uri?vault=YOURVAULT&commandname=MIDE%3AInstall%20from%20URL&arg=ENCODED_RELEASE_ZIP_URL",
+      COST_JSON: null,                       // e.g. https://your.github.io/cost.json -> { "goal": 4200, "raised": 1750 }
+
+      // Official repos (fill with real links when public)
+      REPO_OBSIDIAN_MIDE: "#TODO-obsidian-mide",
+      REPO_MIDE_PACK_DEV: "#TODO-mide-pack-dev",
+      REPO_MIDE_RESEARCH: "#TODO-mide-research",
+      REPO_MIDE_SDK_FLOWS:"#TODO-mide-sdk-flows",
+      REPO_LANDING_PAGE:  "#TODO-landing-page"
+    };
+    async function hydrateCost(){
+      const elBar = document.querySelector('.bar>i');
+      const elLbl = document.querySelector('#costLabel');
+      let goal=4200, raised=1680; // defaults (USD) — change or feed COST_JSON
+      if(MIDE_CONFIG.COST_JSON){
+        try{const r=await fetch(MIDE_CONFIG.COST_JSON); const j=await r.json(); goal=j.goal??goal; raised=j.raised??raised;}catch{}
+      }
+      const pct = Math.max(0, Math.min(1, raised/goal));
+      elBar.style.transform = `scaleX(${pct})`;
+      elLbl.textContent = `This month’s API costs covered: ${(pct*100).toFixed(0)}%  (${format(raised)} / ${format(goal)})`;
+      function format(n){return "$"+n.toLocaleString();}
+    }
+    addEventListener('DOMContentLoaded', () => {
+      hydrateCost();
+      for(const [k,v] of Object.entries(MIDE_CONFIG)){
+        const nodes = document.querySelectorAll(`[data-link="${k}"]`);
+        nodes.forEach(el=>{ if(v) el.setAttribute('href', v); });
+      }
+      document.getElementById('yr').textContent = new Date().getFullYear();
+    });
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Top Nav -->
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-badge">M</div>
+        <div>MIDE</div>
+      </div>
+      <div style="display:flex;gap:16px">
+        <a href="#value">Value</a>
+        <a href="#flows">Flows</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#packages">Packages</a>
+        <a href="#community">Community</a>
+        <a href="#support">Support</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <span class="beta">In Beta • open-source & community-driven</span>
+        <h1 class="h1">The agentic IDE for Obsidian — built for <span style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">flow-chaining</span> and community packs</h1>
+        <p class="lead">MIDE is an open, OS-like layer inside Obsidian. Chain components across packs, run through an Agent or by hand, wire limitless context from your vault, and grow it with the community!</p>
+        <p class="callout">MIDE isn't only designed to be used — it's designed to be <b>BUILT</b>!</p>
+        <div class="btns">
+          <a class="btn primary" data-link="INSTALL_URL">⬇️ Install MIDE</a>
+          <a class="btn" data-link="DOCS_URL">📘 Docs</a>
+          <a class="btn" data-link="DEMO_URL">▶️ Watch demo</a>
+          <a class="btn" data-link="ADV_URI_INSTALL" title="Requires Advanced URI">➕ Add to MIDE</a>
+        </div>
+        <div class="badges">
+          <span class="pill">AGPL-3.0 Core • permissive packs</span>
+          <span class="pill">Obsidian-native</span>
+          <span class="pill">SDK with guardrails</span>
+          <span class="pill">Verified packs</span>
+        </div>
+      </div>
+      <div class="panel figure">
+        <!-- Replace with a lightweight hero image or animated GIF later -->
+        <div>Hero Figure (Flow chaining across packs)</div>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="value" class="sec">
+      <h2>Why MIDE?</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker">Command</div>
+          <h3>More than "Agent OS"</h3>
+          <p class="mute">Harmonized flows run via the agent or user execution — and chain across packs for multi-component prompting.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Knowledge</div>
+          <h3>Infinite context engineering</h3>
+          <p class="mute">Your Obsidian vault becomes the single source of truth for PKM-powered workflows.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Community</div>
+          <h3>Packs, not plugins (only)</h3>
+          <p class="mute">"MIDE packs" are Obsidian plugins chalk full of MIDE components! Discover via <code>obsidian-mide-pack</code> topic, install from MIDE's in-app Pack Browser, via GitHub's one-click deep links, or even MIDE packs registered in Obsidian Community Plugin Store.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Intuitive</div>
+          <h3>Intuitive authoring</h3>
+          <p class="mute">Markdown-first authoring with one markdown per component—yet designed for systems of interactive components.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Security</div>
+          <h3>Trust boundaries</h3>
+          <p class="mute">Pack verification badges, permission prompts, and prompt-injection linting keep you safer.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Open</div>
+          <h3>Mission-driven & extensible</h3>
+          <p class="mute">Strongly licensed core, permissive community packs, and a highly flexible SDK to keep development moving fast!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flows -->
+    <section id="flows" class="sec">
+      <h2>Flows, anywhere</h2>
+      <div class="card">
+        <p class="mute">
+          Flows are procedures that can be executed by different hosts — users
+          <i>(via Obsidian Command Palette)</i>, agents <i>(via MCP tooling)</i>,
+          and even other flows <i>(via Obsidian's programmatic backend and MIDE flow chaining)</i>!
+        </p>
+        <ul class="list">
+          <li><b>Users:</b> run flows directly from the Command Palette.</li>
+          <li><b>Agents:</b> invoke flows through MCP tools when reasoning is needed.</li>
+          <li><b>Other flows:</b> chain across packs for multi-component prompting.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Philosophy / Cost -->
+    <section id="philosophy" class="sec">
+      <h2>Distinguish Automation from Reasoning &amp; Save 💲</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p class="mute">
+            Our agents don’t have to be super smart (and therefore expensive) if <em>we</em> are.
+            Composable, repeatable, programmatic flows reduce the number of costly model calls and keep outputs consistent.
+            Use agents as <b>reasoning tools</b> — not as brute-force automation for everything.
+          </p>
+          <ul class="list">
+            <li><b>Only use an agent when reasoning is required.</b> If a step is mechanical, run it as a flow.</li>
+            <li><b>Engineer better context.</b> Rich vault context makes it harder for agents to go off-track.</li>
+            <li><b>Chain small, reliable steps.</b> Deterministic sub-flows beat a single giant prompt.</li>
+          </ul>
+          <p class="note">Bottom line: smarter flow design = fewer tokens burned.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Practical wins</div>
+          <ul class="list">
+            <li>Batch operations & cache intermediates to avoid repeat calls.</li>
+            <li>Prefer structured prompts + validators to reduce retries.</li>
+            <li>Route tasks: local code → flows → agent only when needed.</li>
+            <li>Share reusable flows across packs to amortize cost.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages (Core & Official Packs) -->
+    <section id="packages" class="sec">
+      <h2>Official Packages</h2>
+
+      <!-- Core -->
+      <div class="card" style="margin-bottom:16px">
+        <span class="kicker">Core</span>
+        <h3><a data-link="REPO_OBSIDIAN_MIDE">obsidian-mide</a> <span class="note">(MIDE Core Obsidian Plugin & MCP)</span></h3>
+        <p class="mute">
+          Packaged as an <b>Obsidian plugin</b> and <b>MCP</b>, the MIDE (My IDE) framework leverages <b>multi-component prompting</b>
+          to empower personal, agentic, and programmatic automation. This is the foundation: Components Manager, Pack Browser,
+          permissions & provenance, flow chaining, and the SDK runtime.
+        </p>
+        <div class="meta">
+          <span class="tag">Private (beta)</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">BSD Zero Clause</span>
+        </div>
+      </div>
+
+      <!-- Packs grid -->
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker">Pack</div>
+          <h3><a data-link="REPO_MIDE_PACK_DEV">mide-pack-dev</a></h3>
+          <p class="mute">The official MIDE pack for <b>developing MIDE packs</b>, leveraging advanced self-development techniques.
+            Use it to scaffold, validate, and iterate on packs quickly.</p>
+          <div class="meta">
+            <span class="tag">Private (beta)</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">BSD Zero Clause</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="kicker">Pack</div>
+          <h3><a data-link="REPO_MIDE_RESEARCH">mide-research</a></h3>
+          <p class="mute">The official MIDE pack for <b>research workflows</b> — literature review flows, note pipelines, and repeatable research patterns designed for Obsidian vaults.</p>
+          <div class="meta">
+            <span class="tag">Private (beta)</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">BSD Zero Clause</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="kicker">Pack</div>
+          <h3><a data-link="REPO_MIDE_SDK_FLOWS">mide-sdk-flows</a></h3>
+          <p class="mute">The official pack that <b>exposes SDK functionality as MIDE flows</b>.
+            Great for learning the API surface, testing capabilities, and composing new flows.</p>
+          <div class="meta">
+            <span class="tag">Private (beta)</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">BSD Zero Clause</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Site repo -->
+      <div class="card" style="margin-top:16px">
+        <div class="kicker">Meta</div>
+        <h3><a data-link="REPO_LANDING_PAGE">landing-page</a></h3>
+        <p class="mute">This repository contains the <b>official MIDE landing page</b> you’re viewing. Public and lightweight so you can fork and adapt.</p>
+        <div class="meta">
+          <span class="tag">Public</span>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:10px">
+        Some packages are <b>private during beta</b> while we stabilize the SDK and surface. Public releases will be announced in the README and Pack Browser.
+      </p>
+    </section>
+
+    <!-- Community Development -->
+    <section id="community" class="sec">
+      <h2>Build with the community</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker">SDK</div>
+          <h3>Stable, gated APIs</h3>
+          <p class="mute">Use <code>@mide/sdk</code> — get <code>vault</code>, <code>ui</code>, <code>llm</code>, <code>http</code>, and more with permissions & typings.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Discovery</div>
+          <h3>Find packs fast</h3>
+          <p class="mute">Search GitHub topic <code>obsidian-mide-pack</code>, or install by URL. Verified packs are listed in-app.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Publish</div>
+          <h3>Zero hosting</h3>
+          <p class="mute">Ship as an Obsidian plugin with a <code>mide/</code> folder & <code>mide-pack.json</code>. GitHub Releases handle updates.</p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:12px">
+        <b>"Add to MIDE"</b> deep-link example (requires Advanced-URI):  
+        <code data-link="ADV_URI_INSTALL" style="display:block;overflow:auto;white-space:nowrap;margin-top:6px"></code>
+      </div>
+    </section>
+
+    <!-- Testimonials (placeholder) -->
+    <section class="sec">
+      <h2>What users say</h2>
+      <div class="grid-3">
+        <div class="card"><i>"MIDE turned my vault into a living IDE. The flow chaining is 🤯."</i><div class="note">— Early user</div></div>
+        <div class="card"><i>"Installation via pack URLs was painless. Verification badges give me peace of mind."</i><div class="note">— Beta tester</div></div>
+        <div class="card"><i>"Writing a pack with the SDK felt like using a mini VS Code API — but safer."</i><div class="note">— Pack author</div></div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section id="support" class="sec">
+      <h2>Join the MIDE Mission</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p class="mute">MIDE is 100% open & community-funded. MIDE’s flow-first design helps you spend less on agents by doing more with structure and context. If MIDE helps you, please consider sponsoring — even $5 helps.</p>
+          <div class="cost">
+            <div class="bar" style="flex:1 1 auto"><i></i></div>
+            <span class="note" id="costLabel">Loading cost coverage…</span>
+          </div>
+          <div class="btns" style="margin-top:12px">
+            <a class="btn primary" data-link="SPONSOR_URL">💖 Sponsor MIDE</a>
+            <a class="btn" href="#faq">Read the funding FAQ</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">Transparency</div>
+          <h3>How your support helps</h3>
+          <ul class="list">
+            <li>Kaden McKeen's personal LLM API costs as he develops the MIDE core and official packs!</li>
+            <li>Security reviews for "Verified" packs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="sec">
+      <h2>FAQ</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Is MIDE free?</h3>
+          <p class="mute">Yes, the MIDE core plugin and official packs are and will always be open and free! However, community-developed packs may choose their own licenses and ; we badge verified ones.</p>
+        </div>
+        <div class="card">
+          <h3>How do packs update?</h3>
+          <p class="mute">They’re Obsidian plugins. Updates ship via GitHub Releases; MIDE reads <code>mide-pack.json</code>.</p>
+        </div>
+        <div class="card">
+          <h3>Will my components break?</h3>
+          <p class="mute">The SDK and MIDE Core schemas support semantic versioning and are designed to be backwards compatible.</p>
+        </div>
+        <div class="card">
+          <h3>Is it safe?</h3>
+          <p class="mute">Permission prompts, provenance, and prompt-safety linting raise the bar. You’re always in control.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">
+      <div>© <span id="yr"></span> MIDE. Built with love for the Obsidian community.</div>
+      <div class="note">Style inspired by clean ML project pages (hero + quick links + compact sections). We adopted a similar structure for clarity and speed to value.</div>
+    </div>
+  </div>
+</body>
+</html>
