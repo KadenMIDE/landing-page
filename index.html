@@ -21,6 +21,23 @@
     .flow-line{stroke:#38bdf8;stroke-width:2;fill:none;stroke-dasharray:5,5;animation:flowDash 20s linear infinite}
     @keyframes flowDash{to{stroke-dashoffset:-100}}
     .brain-node{fill:#8b5cf6;stroke:#a78bfa;stroke-width:2;filter:drop-shadow(0 0 10px rgba(167,139,250,0.6))}
+    .neon-sign{position:absolute;top:-20px;right:-20px;background:linear-gradient(135deg,#0a0e15,#050810);border:6px solid #1a1f2e;border-radius:12px;padding:20px;width:200px;height:140px;box-shadow:0 0 2px #000,0 0 30px rgba(56,189,248,0.15),inset 0 2px 4px rgba(0,0,0,0.8),inset 0 -2px 4px rgba(255,255,255,0.05),0 4px 8px rgba(0,0,0,0.5);z-index:10;overflow:hidden}
+    .neon-sign::before{content:'';position:absolute;top:8px;left:8px;width:18px;height:18px;background:radial-gradient(circle,#71717a 20%,#52525b 40%,#3f3f46 60%,#27272a 100%);border-radius:50%;box-shadow:inset 0 3px 6px rgba(0,0,0,0.8),inset 0 -2px 3px rgba(255,255,255,0.3),0 2px 4px rgba(0,0,0,0.9),0 0 2px rgba(255,255,255,0.1);border:2px solid #18181b;z-index:20}
+    .neon-sign::after{content:'';position:absolute;bottom:8px;right:8px;width:18px;height:18px;background:radial-gradient(circle,#71717a 20%,#52525b 40%,#3f3f46 60%,#27272a 100%);border-radius:50%;box-shadow:inset 0 3px 6px rgba(0,0,0,0.8),inset 0 -2px 3px rgba(255,255,255,0.3),0 2px 4px rgba(0,0,0,0.9),0 0 2px rgba(255,255,255,0.1);border:2px solid #18181b;z-index:20}
+    .neon-emoji{font-size:32px;display:inline-block;transition:filter 0.5s,text-shadow 0.5s}
+    .neon-emoji.active{text-shadow:0 0 10px currentColor,0 0 20px currentColor,0 0 30px currentColor;filter:brightness(1.2);animation:neonFlicker 4s infinite}
+    .neon-emoji.explosive{animation:neonFlickerExplosion 1.6s infinite;text-shadow:0 0 15px currentColor,0 0 30px currentColor,0 0 45px currentColor;filter:brightness(1.4)}
+    .neon-emoji.inactive{text-shadow:0 0 3px currentColor;filter:brightness(0.3);opacity:0.4}
+    @keyframes neonFlicker{
+      0%,18%,22%,24%,40%,42%,43%,70%,72%,75%,100%{opacity:1}
+      19%,21%,23%,41%,71%,74%{opacity:0.25}
+      20%,41.5%,73.5%{opacity:0.6}
+    }
+    @keyframes neonFlickerExplosion{
+      0%,12%,25%,38%,51%,64%,77%,90%,100%{opacity:1}
+      6%,19%,32%,45%,58%,71%,84%,97%{opacity:0.5}
+      9%,22%,35%,48%,61%,74%,87%{opacity:0.75}
+    }
     .brain-line{stroke:#a78bfa;stroke-width:2;fill:none;marker-end:url(#arrowPurple)}
     .insane-node{fill:#f97316;stroke:#fb923c;stroke-width:2;filter:drop-shadow(0 0 10px rgba(249,115,22,0.6))}
     .insane-line{stroke:#fb923c;stroke-width:2;fill:none}
@@ -181,6 +198,54 @@
       }
       document.getElementById('yr').textContent = new Date().getFullYear();
       
+      // Neon sign asteroid states
+      let neonState = 0;
+      
+      const updateNeonSign = () => {
+        const meteorFar = document.getElementById('neonMeteorFar');
+        const meteorClose = document.getElementById('neonMeteorClose');
+        const dinosEl = document.getElementById('neonDinos');
+        const explosionEl = document.getElementById('neonExplosion');
+        
+        if (meteorFar && meteorClose && dinosEl && explosionEl) {
+          // Get all neon elements (excluding dino children)
+          const allNeon = [meteorFar, meteorClose, explosionEl];
+          const dinoEmojis = dinosEl.querySelectorAll('.neon-emoji');
+          
+          // Reset all to inactive
+          allNeon.forEach(el => { el.classList.remove('active', 'explosive'); el.classList.add('inactive'); });
+          dinoEmojis.forEach(d => { d.classList.remove('active'); d.classList.add('inactive'); });
+          
+          // Activate current state
+          if (neonState === 0) {
+            // State 1: Far meteor + dinosaurs (dinos on top)
+            meteorFar.classList.remove('inactive');
+            meteorFar.classList.add('active');
+            dinoEmojis.forEach(d => { d.classList.remove('inactive'); d.classList.add('active'); });
+            dinosEl.style.zIndex = '15';
+            explosionEl.style.zIndex = '5';
+          } else if (neonState === 1) {
+            // State 2: Close meteor + dinosaurs (dinos on top)
+            meteorClose.classList.remove('inactive');
+            meteorClose.classList.add('active');
+            dinoEmojis.forEach(d => { d.classList.remove('inactive'); d.classList.add('active'); });
+            dinosEl.style.zIndex = '15';
+            explosionEl.style.zIndex = '5';
+          } else {
+            // State 3: Volatile explosion (explosion on top)
+            explosionEl.classList.remove('inactive');
+            explosionEl.classList.add('explosive');
+            explosionEl.style.zIndex = '15';
+            dinosEl.style.zIndex = '5';
+          }
+        }
+        
+        neonState = (neonState + 1) % 3;
+      };
+      
+      setInterval(updateNeonSign, 1800);
+      updateNeonSign(); // Initialize first state
+      
       // Competitor cycling
       const competitors = [
         'Prompt Store',
@@ -272,7 +337,7 @@
         <div class="panel figure" style="position:absolute;top:0;left:calc(100% + 20px);min-height:420px;width:fit-content;min-width:min(320px, calc(40vw - 40px));max-width:min(400px, calc(40vw - 20px));display:flex;flex-direction:column;padding:20px;box-sizing:border-box;overflow:visible">
         <div style="text-align:center;margin-bottom:16px">
           <div style="font-style:italic;margin-top:8px;font-size:14px;background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600">
-            Your <span style="font-size:15px">Work</span><span style="font-size:15px"><b>Flow Automation</b></span>
+            <span style="font-size:18px"><b>Your </b></span><span style="font-size:14px">Work</span><span style="font-size:18px"><b>Flow Automation</b></span>
           </div>
         </div>
         <!-- Fake command palette showcasing flows -->
@@ -284,11 +349,11 @@
           <div class="fake-search">
             <span style="color:#94a3b8;font-weight:500">MIDE:</span>
             <span class="fake-cursor"></span>
-          </div>
+              </div>
           <div style="flex:1;overflow-y:auto;overflow-x:visible;display:flex;flex-direction:column;gap:6px;position:relative">
             <div class="flow-item" onclick="document.getElementById('mideModal').classList.add('show')" style="padding:8px 12px;background:#0f172a;border-radius:8px;border:1px solid #1f2937;font-size:13px;display:flex;justify-content:space-between;align-items:center">
-              <b>Organize My Notes</b>
-              <span style="opacity:.8">📝🤖</span>
+                <b>Organize My Notes</b>
+                <span style="opacity:.8">📝🤖</span>
             </div>
             <div class="flow-item" onclick="document.getElementById('mideModal').classList.add('show')" style="padding:8px 12px;background:#0f172a;border-radius:8px;border:1px solid #1f2937;font-size:13px;display:flex;justify-content:space-between;align-items:center">
               <b>Sort My Email</b>
@@ -348,7 +413,7 @@
                 Procedural Flow Chaining
               </p>
               <p style="margin:0;font-weight:800;font-size:14px;color:var(--brand)">
-                Limitless • Advanced • Dependable
+                Advanced • Limitless • Dependable
               </p>
             </div>
             <div style="position:relative;min-height:90px;display:flex;align-items:center;justify-content:center">
@@ -396,7 +461,7 @@
             </div>
             <div style="text-align:right">
               <div style="display:inline-block;padding:10px 24px;background:linear-gradient(90deg,#8b5cf6,#d946ef);color:#05101a;border-radius:999px;font-weight:900;font-size:20px;margin-bottom:12px;box-shadow:0 0 30px rgba(167,139,250,0.5)">
-                ... THE BRAIN
+                ... WITH YOUR BRAIN
               </div>
               <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;margin:12px 0;font-size:18px;font-weight:700">
                 <div style="padding:8px 16px;background:rgba(56,189,248,0.15);border:2px solid var(--brand);border-radius:12px">🤖 AI</div>
@@ -407,7 +472,8 @@
               </div>
               <p style="color:var(--text);margin:12px 0 0;font-size:15px;line-height:1.7;text-align:right">
                 <b>Seamless</b> interleaving!<br>
-                Our <b style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">Personalization Engine</b> protects your time and money.
+                <b>Powered by your own personal digital knowledge<br>
+                Our <b style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">Personalization Engine</b> runs to protect your interests!
               </p>
             </div>
           </div>
@@ -463,9 +529,23 @@
 
     <!-- Fun Competitor Callout -->
     <section class="sec" style="padding:48px 0;text-align:center">
-      <div class="card" style="max-width:700px;margin:0 auto;user-select:none">
+      <div class="card" style="max-width:700px;margin:0 auto;user-select:none;position:relative">
+        <!-- Neon Sign -->
+        <div class="neon-sign">
+          <div style="position:relative;width:100%;height:100%">
+            <span class="neon-emoji inactive" id="neonMeteorFar" style="position:absolute;top:-18%;right:-10%;color:#fb923c;font-size:28px;transform:rotate(8deg)">☄️</span>
+            <span class="neon-emoji inactive" id="neonMeteorClose" style="position:absolute;top:10%;right:15%;color:#fb923c;font-size:42px;transform:rotate(8deg)">☄️</span>
+            <div id="neonDinos" style="position:absolute;bottom:-10%;left:-10%;display:flex;gap:4px">
+              <span class="neon-emoji inactive" style="color:#22c55e;transform:scaleX(-1) rotate(7deg)">🦖</span>
+              <span class="neon-emoji inactive" style="color:#22c55e;transform:scaleX(-1) rotate(10deg)">🦕</span>
+            </div>
+            <span class="neon-emoji inactive" id="neonExplosion" style="position:absolute;bottom:-29%;left:0%;color:#ef4444;font-size:52px;transform:rotate(-40deg)">💥</span>
+          </div>
+        </div>
+        
         <p style="font-size:22px;font-weight:600;margin:0 0 16px;line-height:1.6">
-          Check out the dinosaurs! 🦖
+          Meet the fosils.<br>
+          Their oil fuels our engines!
         </p>
         <div style="position:relative;display:inline-block">
           <span class="click-pointer right anim2" id="clickPointer" style="top:20%;left:-5%;transform:translateY(-50%)">👉</span>
@@ -744,7 +824,7 @@
     <section class="sec" style="padding:36px 0">
       <div style="text-align:center;margin-bottom:32px">
         <p style="font-size:20px;font-weight:600;margin:0;color:var(--text)">
-          <span style="filter:drop-shadow(0 0 48px rgba(255, 77, 0, 0.842));font-size:2.25em;line-height:1;display:inline-block">💯</span><i>Who doesn't appreciate a good optimization?</i>
+          <span style="filter:drop-shadow(0 0 1em rgba(255, 77, 0, 0.842));transform:translateY(15%) translateX(-25%);font-size:2.25em;line-height:1;display:inline-block">💯</span><i>Who doesn't appreciate a <span style="color:var(--ok)">good</span> optimization?</i>
         </p>
       </div>
       
