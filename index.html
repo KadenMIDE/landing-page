@@ -21,7 +21,7 @@
     .flow-line{stroke:#38bdf8;stroke-width:2;fill:none;stroke-dasharray:5,5;animation:flowDash 20s linear infinite}
     @keyframes flowDash{to{stroke-dashoffset:-100}}
     .brain-node{fill:#8b5cf6;stroke:#a78bfa;stroke-width:2;filter:drop-shadow(0 0 10px rgba(167,139,250,0.6))}
-    .neon-sign{position:absolute;top:-20px;right:-20px;background:linear-gradient(135deg,#0a0e15,#050810);border:6px solid #1a1f2e;border-radius:12px;padding:20px;width:200px;height:140px;box-shadow:0 0 2px #000,0 0 30px rgba(56,189,248,0.15),inset 0 2px 4px rgba(0,0,0,0.8),inset 0 -2px 4px rgba(255,255,255,0.05),0 4px 8px rgba(0,0,0,0.5);z-index:10;overflow:hidden}
+    .neon-sign{background:linear-gradient(135deg,#0a0e15,#050810);border:6px solid #1a1f2e;border-radius:12px;padding:20px;width:200px;height:140px;box-shadow:0 0 2px #000,0 0 30px rgba(56,189,248,0.15),inset 0 2px 4px rgba(0,0,0,0.8),inset 0 -2px 4px rgba(255,255,255,0.05),0 4px 8px rgba(0,0,0,0.5);position:relative;overflow:hidden}
     .neon-sign::before{content:'';position:absolute;top:8px;left:8px;width:18px;height:18px;background:radial-gradient(circle,#71717a 20%,#52525b 40%,#3f3f46 60%,#27272a 100%);border-radius:50%;box-shadow:inset 0 3px 6px rgba(0,0,0,0.8),inset 0 -2px 3px rgba(255,255,255,0.3),0 2px 4px rgba(0,0,0,0.9),0 0 2px rgba(255,255,255,0.1);border:2px solid #18181b;z-index:20}
     .neon-sign::after{content:'';position:absolute;bottom:8px;right:8px;width:18px;height:18px;background:radial-gradient(circle,#71717a 20%,#52525b 40%,#3f3f46 60%,#27272a 100%);border-radius:50%;box-shadow:inset 0 3px 6px rgba(0,0,0,0.8),inset 0 -2px 3px rgba(255,255,255,0.3),0 2px 4px rgba(0,0,0,0.9),0 0 2px rgba(255,255,255,0.1);border:2px solid #18181b;z-index:20}
     .neon-emoji{font-size:32px;display:inline-block;transition:filter 0.5s,text-shadow 0.5s}
@@ -527,33 +527,40 @@
       </div>
     </section>
 
-    <!-- Fun Competitor Callout -->
-    <section class="sec" style="padding:48px 0;text-align:center">
-      <div class="card" style="max-width:700px;margin:0 auto;user-select:none;position:relative">
-        <!-- Neon Sign -->
-        <div class="neon-sign">
-          <div style="position:relative;width:100%;height:100%">
-            <span class="neon-emoji inactive" id="neonMeteorFar" style="position:absolute;top:-18%;right:-10%;color:#fb923c;font-size:28px;transform:rotate(8deg)">☄️</span>
-            <span class="neon-emoji inactive" id="neonMeteorClose" style="position:absolute;top:10%;right:15%;color:#fb923c;font-size:42px;transform:rotate(8deg)">☄️</span>
-            <div id="neonDinos" style="position:absolute;bottom:-10%;left:-10%;display:flex;gap:4px">
-              <span class="neon-emoji inactive" style="color:#22c55e;transform:scaleX(-1) rotate(7deg)">🦖</span>
-              <span class="neon-emoji inactive" style="color:#22c55e;transform:scaleX(-1) rotate(10deg)">🦕</span>
+    <!-- Two-Panel Competitor Callout -->
+    <section class="sec" style="padding:48px 0">
+      <div style="max-width:900px;margin:0 auto">
+        <div class="grid-2" style="align-items:stretch;gap:24px">
+          <!-- Left Panel: Text Content -->
+          <div class="card" style="user-select:none;display:flex;flex-direction:column;justify-content:center;text-align:center">
+            <p style="font-size:22px;font-weight:600;margin:0 0 16px;line-height:1.6">
+              Meet the fosils.<br>
+              Their oil fuels our engines!
+            </p>
+            <div style="position:relative;display:inline-block;align-self:center">
+              <span class="click-pointer right anim2" id="clickPointer" style="top:20%;left:-5%;transform:translateY(-50%)">👉</span>
+              <div class="competitor-box" id="competitorContainer">
+                <span class="competitor-text" id="competitorText">Prompt Store</span>
+              </div>
             </div>
-            <span class="neon-emoji inactive" id="neonExplosion" style="position:absolute;bottom:-29%;left:0%;color:#ef4444;font-size:52px;transform:rotate(-40deg)">💥</span>
+            <p style="font-size:18px;font-weight:600;margin:16px 0 0;line-height:1.6">And here I thought it was <span id="currentYear" style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800">2025</span>!</p>
+          </div>
+
+          <!-- Right Panel: Neon Sign -->
+          <div class="card" style="display:flex;align-items:center;justify-content:center;position:relative;overflow:visible">
+            <div class="neon-sign" style="position:static;margin:0">
+              <div style="position:relative;width:100%;height:100%">
+                <span class="neon-emoji inactive" id="neonMeteorFar" style="position:absolute;top:-18%;right:-10%;color:#fb923c;font-size:28px;transform:rotate(8deg)">☄️</span>
+                <span class="neon-emoji inactive" id="neonMeteorClose" style="position:absolute;top:10%;right:15%;color:#fb923c;font-size:42px;transform:rotate(8deg)">☄️</span>
+                <div id="neonDinos" style="position:absolute;bottom:-10%;left:-10%;display:flex;gap:4px">
+                  <span class="neon-emoji inactive" style="color:#22c55e;transform:scaleX(-1) rotate(7deg)">🦖</span>
+                  <span class="neon-emoji inactive" style="color:#22c55e;transform:scaleX(-1) rotate(10deg)">🦕</span>
+                </div>
+                <span class="neon-emoji inactive" id="neonExplosion" style="position:absolute;bottom:-29%;left:0%;color:#ef4444;font-size:52px;transform:rotate(-40deg)">💥</span>
+              </div>
+            </div>
           </div>
         </div>
-        
-        <p style="font-size:22px;font-weight:600;margin:0 0 16px;line-height:1.6">
-          Meet the fosils.<br>
-          Their oil fuels our engines!
-        </p>
-        <div style="position:relative;display:inline-block">
-          <span class="click-pointer right anim2" id="clickPointer" style="top:20%;left:-5%;transform:translateY(-50%)">👉</span>
-          <div class="competitor-box" id="competitorContainer">
-            <span class="competitor-text" id="competitorText">Prompt Store</span>
-          </div>
-        </div>
-        <p style="font-size:18px;font-weight:600;margin:16px 0 0;line-height:1.6">And here I thought it was <span id="currentYear" style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800">2025</span>!</p>
       </div>
     </section>
 
