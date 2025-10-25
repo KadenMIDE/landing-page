@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MIDE-OS — Agentic OS</title>
-  <meta name="description" content="MIDE-OS — Personal workflow automation platform." />
-  <meta property="og:title" content="MIDE-OS — Agentic OS." /> 
-  <meta property="og:description" content="Personal workflow automation powered by a global ecosystem of community-developed plugins. 100% free." />
+  <meta name="description" content="MIDE-OS — A self-hosted, community-driven agentic workflow automation platform." />
+  <meta property="og:title" content="MIDE-OS — Agentic OS." />
+  <meta property="og:description" content="Self-hosted personal workflow automation. Community-developed MIDE plugins. Procedural Flow chaining. Smart agent contextualization. Guardrailed SDK. 100% user-supported." />
   <!-- Optional: add your social image -->
   <!-- <meta property="og:image" content="https://YOUR-USER.github.io/mide-site/og.png" /> -->
   <meta property="og:type" content="website" />
@@ -121,9 +121,7 @@
     .click-pointer.anim2::after{animation:clickRipple 1.5s ease-in-out 0.3s infinite}
     .click-pointer.anim3{animation:clickAnim2 1.5s ease-in-out 0.6s infinite}
     .click-pointer.anim3::after{animation:clickRipple 1.5s ease-in-out 0.6s infinite}
-    .competitor-text{display:inline-block;min-width:420px;text-align:center;font-weight:800;font-size:20px;background:linear-gradient(90deg,var(--bad),var(--warn));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .competitor-box{display:inline-block;padding:8px 16px;background:#050810;border:2px solid #0f172a;border-radius:12px;transition:all 0.3s;cursor:pointer}
-    .competitor-box:hover{border-color:var(--ring)!important;box-shadow:0 0 20px rgba(56,189,248,0.2)}
+    .competitor-text{display:inline-block;min-width:280px;text-align:center;font-weight:800;background:linear-gradient(90deg,var(--bad),var(--warn));-webkit-background-clip:text;background-clip:text;color:transparent}
     .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center}
     .modal.show{display:flex}
     .modal-content{background:linear-gradient(180deg,rgba(15,23,42,0.98),rgba(15,23,42,0.95));border:1px solid var(--ring);border-radius:16px;padding:32px;max-width:500px;width:90%;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
@@ -226,7 +224,7 @@
     <section class="hero">
       <div style="max-width:60%;padding-right:20px;position:relative">
         <div style="text-align:center">
-          <span class="beta beta-v1">AI-powered • Socially Responsible • Forever-Free</span>
+          <span class="beta beta-v1">AI-powered • Socially Responsible • Forever Free</span>
           <span class="beta beta-v2">AI-powered • Socially Responsible • Free</span>
           <span class="beta beta-v3">AI-powered • Responsible • Free</span>
           <span class="beta beta-v4">Responsible AI for Free</span>
@@ -251,8 +249,10 @@
           <a class="btn" data-link="ADV_URI_INSTALL" title="Requires Advanced URI">➕ Add to Obsidian</a>
         </div>
         <div class="badges" style="justify-content:center">
+          <span class="pill">🆓 BSD Zero Clause license</span>
           <span class="pill">🏠 Self-hosted</span>
-          <span class="pill">🛡️ Security-focused</span>
+          <span class="pill">💎 Obsidian-compatible</span>
+          <span class="pill">🛡️ SDK with guardrails</span>
           <span class="pill">🔄 Provider-agnostic</span>
           <span class="pill">⚡️ Lightning-fast contextualization</span>
         </div>
@@ -275,7 +275,7 @@
             <span class="fake-cursor"></span>
           </div>
           <div style="flex:1;overflow-y:auto;overflow-x:visible;display:flex;flex-direction:column;gap:6px;position:relative">
-            <div class="flow-item" onclick="document.getElementById('mideModal').classList.add('show')" style="padding:8px 12px;background:#0f172a;border-radius:8px;border:1px solid #1f2937;font-size:13px;display:flex;justify-content:space-between;align-items:center">
+            <div class="flow-item" onclick="document.getElementById('mideModal').classList.add('show')" style="padding:8px 12px;background:rgba(56,189,248,.08);border-radius:8px;border:1px solid rgba(56,189,248,.2);font-size:13px;display:flex;justify-content:space-between;align-items:center">
               <b>Organize My Notes</b>
               <span style="opacity:.8">📝🤖</span>
             </div>
@@ -316,95 +316,16 @@
       </div>
     </section>
 
-    <!-- Flows -->
-    <section id="flows" class="sec">
-      <!-- Visual Flow Diagram - Merged Card with Flowing Gradient -->
-      <div style="max-width:900px;margin:0 auto;position:relative">
-        <div class="card" style="text-align:center;background:
-          radial-gradient(ellipse 800px 300px at 50% 0%, rgba(56,189,248,0.15), transparent 50%),
-          radial-gradient(ellipse 900px 400px at 50% 50%, rgba(167,139,250,0.2), transparent 60%),
-          radial-gradient(ellipse 800px 300px at 50% 100%, rgba(245,158,11,0.15), transparent 50%),
-          linear-gradient(180deg, rgba(15,23,42,0.8), rgba(15,23,42,0.6));
-        border:2px solid;border-image:linear-gradient(180deg,var(--brand),var(--brand2),var(--warn)) 1;position:relative;overflow:visible;padding:24px">
-          
-          <!-- Section 1: Flows Chain -->
-          <div style="position:relative;margin-bottom:28px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center">
-            <div style="text-align:left">
-              <div style="display:inline-block;padding:10px 24px;background:linear-gradient(90deg,#0ea5e9,#22d3ee);color:#05101a;border-radius:999px;font-weight:900;font-size:20px;margin-bottom:12px;box-shadow:0 0 30px rgba(56,189,248,0.5)">
-                FLOWS CHAIN...
-              </div>
-              <p style="color:var(--text);margin:0 0 6px;font-size:16px;font-weight:600">
-                Procedural Flow chaining for limitless combinations
-              </p>
-              <p style="margin:0;font-weight:800;font-size:14px;color:var(--brand)">
-                Limitless • Advanced • Dependable
-              </p>
-            </div>
-            <div style="position:relative;min-height:90px">
-              <div style="position:absolute;top:50%;right:12px;transform:translateY(-50%);font-size:64px;opacity:0.08;filter:blur(2px)">🌊</div>
-              <!-- Diagram space -->
-            </div>
-          </div>
-
-          <!-- Section 2: The Brain -->
-          <div style="position:relative;margin-bottom:28px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center">
-            <div style="position:relative;min-height:90px">
-              <div style="position:absolute;top:50%;left:12px;transform:translateY(-50%);font-size:64px;opacity:0.08;filter:blur(2px)">🧠</div>
-              <!-- Diagram space -->
-            </div>
-            <div style="text-align:right">
-              <div style="display:inline-block;padding:10px 24px;background:linear-gradient(90deg,#8b5cf6,#d946ef);color:#05101a;border-radius:999px;font-weight:900;font-size:20px;margin-bottom:12px;box-shadow:0 0 30px rgba(167,139,250,0.5)">
-                ... THE BRAIN
-              </div>
-              <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;margin:12px 0;font-size:18px;font-weight:700">
-                <div style="padding:8px 16px;background:rgba(56,189,248,0.15);border:2px solid var(--brand);border-radius:12px">🤖 AI</div>
-                <span style="font-size:28px;color:var(--brand2)">⇄</span>
-                <div style="padding:8px 16px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#05101a;border:2px solid var(--brand);border-radius:12px;font-weight:900;box-shadow:0 0 20px rgba(56,189,248,0.4)">👤 YOU</div>
-                <span style="font-size:28px;color:var(--brand2)">⇄</span>
-                <div style="padding:8px 16px;background:rgba(167,139,250,0.15);border:2px solid var(--brand2);border-radius:12px">💻 Code</div>
-              </div>
-              <p style="color:var(--text);margin:12px 0 0;font-size:15px;line-height:1.7;text-align:right">
-                <b>Seamless</b> interleaving!<br>
-                Our <b style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">Personalization Engine</b> protects your time and money.
-              </p>
-            </div>
-          </div>
-
-          <!-- Section 3: It's Insane -->
-          <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center">
-            <div style="text-align:left">
-              <div style="display:inline-block;padding:10px 24px;background:linear-gradient(90deg,#f97316,#ec4899);color:#05101a;border-radius:999px;font-weight:900;font-size:20px;margin-bottom:12px;box-shadow:0 0 30px rgba(239,68,68,0.5)">
-                IT'S INSANE.
-              </div>
-              <p style="color:var(--text);margin:0 0 8px;font-size:16px;font-weight:600">
-                Draw on a <b style="color:var(--warn)">GLOBAL</b> bank of user-created, needs-driven workflows!
-              </p>
-              <p style="margin:0;font-weight:800;font-size:14px;color:var(--warn)">
-                OR build your dream Flow in <b>MINUTES</b> with Self-Creation! 🚀
-              </p>
-            </div>
-            <div style="position:relative;min-height:90px">
-              <div style="position:absolute;top:50%;right:12px;transform:translateY(-50%);font-size:64px;opacity:0.08;filter:blur(2px)">🤯</div>
-              <!-- Diagram space -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Fun Competitor Callout -->
     <section class="sec" style="padding:48px 0;text-align:center">
-      <div class="card" style="max-width:700px;margin:0 auto;user-select:none">
-        <p style="font-size:22px;font-weight:600;margin:0 0 16px;line-height:1.6">
-          Check out the dinosaurs! 🦖
+      <div class="panel" style="max-width:700px;margin:0 auto;position:relative;cursor:pointer;user-select:none" id="competitorContainer">
+        <span class="click-pointer right anim2" id="clickPointer" style="top:35%;left:20px;transform:translateY(-50%)">👉</span>
+        <p style="font-size:22px;font-weight:600;margin:0;line-height:1.6">
+          You're still using an old-fashioned <br>
+          <span class="competitor-text" id="competitorText">Prompt Store</span>?<br>
+          Dude... it's <span id="currentYear" style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800">2025</span>.
         </p>
-        <div style="position:relative;display:inline-block">
-          <span class="click-pointer right anim2" id="clickPointer" style="top:20%;left:-5%;transform:translateY(-50%)">👉</span>
-          <div class="competitor-box" id="competitorContainer">
-            <span class="competitor-text" id="competitorText">Prompt Store</span>
-          </div>
-        </div>
-        <p style="font-size:18px;font-weight:600;margin:16px 0 0;line-height:1.6">And here I thought it was <span id="currentYear" style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800">2025</span>!</p>
+        <p class="note" style="margin:12px 0 0;font-size:16px"><b>What MIDE can replace for you 😉</b></p>
       </div>
     </section>
 
@@ -430,7 +351,7 @@
           <div style="font-size:48px;margin-bottom:12px;filter:drop-shadow(0 0 20px rgba(56,189,248,0.3))">🛞⚡</div>
           <h3 style="margin:0 0 8px;font-size:20px;background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">The Method</h3>
           <p class="mute" style="margin:0;font-size:15px"><b>We don't reinvent the wheel, we power it</b></p>
-          <p class="mute" style="margin:8px 0 0;font-size:13px">Why compete with what you could <i>integate.</i></p>
+          <p class="mute" style="margin:8px 0 0;font-size:13px">Build on what works. Don't replace—enhance.</p>
         </div>
       </div>
     </section>
@@ -502,6 +423,21 @@
       </div>
     </section>
 
+    <!-- Flows -->
+    <section id="flows" class="sec">
+      <h2><span style="opacity:0.4">Work</span>Flows</h2>
+      <div class="card">
+        <p class="mute">
+          <b>Same Flow 🌊. Multiple hosts.</b> Run manually from the Command Palette. Let agents invoke them via MCP. Chain them together for complex workflows. Your choice.
+        </p>
+        <ul class="list">
+          <li><b>Manual:</b> Command Palette, instant execution.</li>
+          <li><b>Agentic:</b> MCP tools when reasoning is needed.</li>
+          <li><b>Chained:</b> Cross-plugin Flows 🌊 for multi-step prompting.</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Philosophy / Cost -->
     <section id="philosophy" class="sec">
       <h2>Save money. Use agents smarter.</h2>
@@ -509,7 +445,7 @@
         <div class="card">
           <p class="mute">
             Agents don't need to be expensive if you're smart about it.
-            Programmatic Flows handle repetitive work. Agents handle reasoning. Local-first = zero orchestration fees.
+            Programmatic Flows handle repetitive work. Agents handle reasoning. Self-hosted = zero orchestration fees.
           </p>
           <ul class="list">
             <li><b>Agents for reasoning only.</b> Everything else runs as a Flow 🌊.</li>
@@ -539,7 +475,7 @@
       <!-- Core -->
       <div class="card" style="margin-bottom:16px">
         <span class="kicker">Core</span>
-        <h3><a data-link="REPO_OBSIDIAN_MIDE">obsidian-mide</a> <span class="note">(MIDE's Personalization Engine)</span></h3>
+        <h3><a data-link="REPO_OBSIDIAN_MIDE">obsidian-mide</a> <span class="note">(MIDE's Personalization Engine for the Obsidian Platform)</span></h3>
         <p class="mute">
           The foundation. Obsidian plugin + MCP server in one. Flow 🌊 chaining, smart contextualization, permissions, Plugin Browser, and the SDK runtime. 
           Built by <b>Kaden McKeen</b>, the MIDE Champion. Everything you need to turn your vault into a workflow powerhouse.
@@ -636,7 +572,7 @@
     <section class="sec">
       <h2>What users say</h2>
       <div class="grid-3">
-        <div class="card"><i>"MIDE-OS turned my vault into a living, local-first IDE. The Flow 🌊 chaining is 🤯."</i><div class="note">— Early beta user</div></div>
+        <div class="card"><i>"MIDE-OS turned my vault into a living, self-hosted IDE. The Flow 🌊 chaining is 🤯."</i><div class="note">— Early beta user</div></div>
         <div class="card"><i>"Finally, workflow automation that doesn't lock me into a cloud service or harvest my data."</i><div class="note">— Privacy-conscious user</div></div>
         <div class="card"><i>"The SDK is incredibly approachable. I built my first plugin in an afternoon—no corporate API to navigate."</i><div class="note">— Community developer</div></div>
       </div>
@@ -675,7 +611,8 @@
     <section class="sec" style="padding:36px 0">
       <div style="text-align:center;margin-bottom:32px">
         <p style="font-size:20px;font-weight:600;margin:0;color:var(--text)">
-          <span style="filter:drop-shadow(0 0 48px rgba(255, 77, 0, 0.842));font-size:2.25em;line-height:1;display:inline-block">💯</span><i>Who doesn't appreciate a good optimization?</i>
+          <span style="filter:drop-shadow(0 0 48px rgba(255,200,0,0.8));font-size:2.5em;line-height:1;display:inline-block;padding-bottom:0.25em">💯</span><br>
+          <i>Who doesn't appreciate a good optimization?</i><br>
         </p>
       </div>
       
@@ -683,26 +620,36 @@
         <!-- Maximize Card -->
         <div class="card" style="border-left:3px solid var(--ok);position:relative;overflow:hidden">
           <div style="position:absolute;top:10px;right:10px;font-size:48px;opacity:0.1;filter:blur(1px)">⏫</div>
-          <h2 style="color:var(--ok);margin:0 0 16px;display:flex;align-items:center;gap:8px">
-            We Maximize:
-          </h2>
+          <h3 style="color:var(--ok);margin:0 0 16px;display:flex;align-items:center;gap:8px">
+            <span style="font-size:24px">⏫</span>
+            We Maximize
+          </h3>
           <ul class="list" style="margin:0">
-            <li><b>Your quality of (AI-powered) life</b></li>
+            <li><b>User security</b></li>
+            <li>
+              <b>User cost-efficiency</b>
+              <ul style="margin:6px 0 0;padding-left:18px;font-size:13px">
+                <li>A few at-cost API calls for plugin validation—we use and drop your key immediately</li>
+                <li>No storage = no leaked API keys!</li>
+                <li>💡 We recommend a unique API key for MIDE on each provider</li>
+              </ul>
+            </li>
             <li><b>Transparency</b> in every way that doesn't negatively impact security</li>
-            <li><b>Social Good</b> via significant funding of Public Foundations</li>
+            <li><b>Donation routing</b> to AI-related risk Public Foundations</li>
           </ul>
         </div>
 
         <!-- Minimize Card -->
         <div class="card" style="border-right:3px solid var(--bad);position:relative;overflow:hidden">
           <div style="position:absolute;top:10px;right:10px;font-size:48px;opacity:0.1;filter:blur(1px)">⏬</div>
-          <h2 style="color:var(--bad);margin:0 0 16px;display:flex;align-items:center;gap:8px">
-            We Minimize:
-          </h2>
+          <h3 style="color:var(--bad);margin:0 0 16px;display:flex;align-items:center;gap:8px">
+            <span style="font-size:24px">⏬</span>
+            We Minimize
+          </h3>
           <ul class="list" style="margin:0">
-            <li><b>Corporate greed</b> which could endanger our mission</li>
+            <li><b>Unnecessary operation costs</b></li>
+            <li><b>Corporate creed</b></li>
             <li><b>Your learning curve</b></li>
-            <li><b>Security risks</b></li>
           </ul>
         </div>
       </div>
@@ -714,7 +661,7 @@
       <div class="grid-2">
         <div class="card">
           <h3>Is MIDE-OS free?</h3>
-          <p class="mute"><b>Yes. Forever.</b> No payments. No fees. No ads. No data harvesting. No catch! We're 100% user-supported.</p>
+          <p class="mute"><b>Yes. Forever.</b> BSD Zero Clause license. No payments. No fees. No ads. 100% user-supported—no VC funding, no data harvesting.</p>
         </div>
         <div class="card">
           <h3>How do plugins update?</h3>
@@ -732,7 +679,7 @@
           </p>
         </div>
         <div class="card">
-          <h3>What's "local-first"?</h3>
+          <h3>What's "self-hosted"?</h3>
           <p class="mute">Runs on <b>your</b> machine. No cloud. No tracking. Your vault, your data, your rules.</p>
         </div>
         <div class="card">
@@ -744,7 +691,7 @@
 
     <div class="foot">
       <div>© <span id="yr"></span> MIDE-OS Inc. Built with love for all ❤️</div>
-      <div class="note">Championed by Kaden McKeen. 100% user-supported, local-first, local-first.</div>
+      <div class="note">Championed by Kaden McKeen. 100% user-supported, self-hosted, local-first.</div>
       <div class="note" style="margin-top:8px"><b>Think once. Automate forever.</b></div>
     </div>
   </div>
