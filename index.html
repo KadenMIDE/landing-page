@@ -539,7 +539,7 @@
         <div class="grid-2" style="align-items:stretch;gap:24px">
           <!-- Left Card: Skip the AI middleman -->
           <div class="card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:480px;padding:24px">
-            <p style="font-size:24px;font-weight:700;margin:0 0 12px;line-height:1.6;white-space:nowrap">🛑 Stop paying the AI middleman 🛑</p>
+            <p style="font-size:24px;font-weight:700;margin:0 0 12px;line-height:1.6;white-space:nowrap">🛑 Stop paying the AI middleman...</p>
             <p style="font-size:13px;margin:0;color:var(--sub);line-height:1.5">
               <b style="color:var(--brand)">No orchestration fee with MIDE-OS</b>—use your own API keys and enjoy at-provider costs!
             </p>
@@ -551,12 +551,15 @@
                 <marker id="arrowGood" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
                   <path d="M0,0 L0,6 L7,3 z" fill="#22c55e"/>
                 </marker>
+                <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L7,3 z" fill="#1e40af"/>
+                </marker>
               </defs>
               
               <!-- Column labels at top -->
-              <text x="180" y="-10" text-anchor="middle" dominant-baseline="hanging" fill="#f97316" font-size="24" font-weight="800">Middlemen</text>
-              <text x="320" y="-28" text-anchor="middle" dominant-baseline="hanging" fill="#0ea5e9" font-size="24" font-weight="800">AI</text>
-              <text x="320" y="-4" text-anchor="middle" dominant-baseline="hanging" fill="#0ea5e9" font-size="24" font-weight="800">Providers</text>
+              <text x="180" y="-10" text-anchor="middle" dominant-baseline="hanging" fill="#22c55e" font-size="24" font-weight="800">Middlemen</text>
+              <text x="320" y="-42" text-anchor="middle" dominant-baseline="hanging" fill="#f97316" font-size="32" font-weight="900" style="letter-spacing:2px">AI</text>
+              <text x="320" y="-10" text-anchor="middle" dominant-baseline="hanging" fill="#f97316" font-size="24" font-weight="800">Providers</text>
               
               <!-- WITHOUT MIDE-OS (top graph) -->
               <!-- YOU node -->
@@ -565,38 +568,38 @@
               <text x="40" y="90" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">YOU</text>
               
               <!-- Middlemen column (3 nodes) -->
-              <circle cx="180" cy="50" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
-              <text x="180" y="55" text-anchor="middle" fill="#05101a" font-size="14">🦖</text>
-              <circle cx="180" cy="95" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
-              <text x="180" y="100" text-anchor="middle" fill="#05101a" font-size="14">🦖</text>
-              <circle cx="180" cy="140" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
-              <text x="180" y="145" text-anchor="middle" fill="#05101a" font-size="14">🦖</text>
+              <circle cx="180" cy="50" r="18" fill="#22c55e" stroke="#4ade80" stroke-width="2" filter="drop-shadow(0 0 10px rgba(34,197,94,0.6))"/>
+              <text x="180" y="55" text-anchor="middle" fill="#0f172a" font-size="18" style="filter: grayscale(1) brightness(0.2) contrast(2);">🦖</text>
+              <circle cx="180" cy="95" r="18" fill="#22c55e" stroke="#4ade80" stroke-width="2" filter="drop-shadow(0 0 10px rgba(34,197,94,0.6))"/>
+              <text x="180" y="100" text-anchor="middle" fill="#0f172a" font-size="18" style="filter: grayscale(1) brightness(0.2) contrast(2);">🦖</text>
+              <circle cx="180" cy="140" r="18" fill="#22c55e" stroke="#4ade80" stroke-width="2" filter="drop-shadow(0 0 10px rgba(34,197,94,0.6))"/>
+              <text x="180" y="145" text-anchor="middle" fill="#0f172a" font-size="18" style="filter: grayscale(1) brightness(0.2) contrast(2);">🦖</text>
               
               <!-- AI Providers column (4 nodes) -->
-              <circle cx="320" cy="40" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="45" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
-              <circle cx="320" cy="85" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="90" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
-              <circle cx="320" cy="130" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="135" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
-              <circle cx="320" cy="175" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="180" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
+              <circle cx="320" cy="40" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="45" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
+              <circle cx="320" cy="85" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="90" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
+              <circle cx="320" cy="130" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="135" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
+              <circle cx="320" cy="175" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="180" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
               
               <!-- YOU to Middlemen (fully connected) -->
-              <path d="M 60 72 L 160 56" stroke="#ef4444" stroke-width="1.8" fill="none" marker-end="url(#arrowBad)" opacity="0.7"/>
-              <path d="M 60 80 L 160 95" stroke="#ef4444" stroke-width="1.8" fill="none" marker-end="url(#arrowBad)" opacity="0.7"/>
-              <path d="M 60 88 L 160 134" stroke="#ef4444" stroke-width="1.8" fill="none" marker-end="url(#arrowBad)" opacity="0.7"/>
+              <path d="M 60 72 L 160 56" stroke="#22c55e" stroke-width="1.8" fill="none" marker-end="url(#arrowGood)" opacity="0.7"/>
+              <path d="M 60 80 L 160 95" stroke="#22c55e" stroke-width="1.8" fill="none" marker-end="url(#arrowGood)" opacity="0.7"/>
+              <path d="M 60 88 L 160 134" stroke="#22c55e" stroke-width="1.8" fill="none" marker-end="url(#arrowGood)" opacity="0.7"/>
               
               <!-- Middlemen to AI Providers (75% connected - chaotic criss-cross) -->
-              <path d="M 198 50 L 300 46" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 52 L 300 130" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 55 L 300 175" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 95 L 300 46" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 95 L 300 85" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 97 L 300 175" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 140 L 300 85" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 138 L 300 130" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
-              <path d="M 198 142 L 300 175" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowBad)" opacity="0.5"/>
+              <path d="M 198 50 L 300 46" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 52 L 300 130" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 55 L 300 175" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 95 L 300 46" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 95 L 300 85" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 97 L 300 175" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 140 L 300 85" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 138 L 300 130" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
+              <path d="M 198 142 L 300 175" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowGood)" opacity="0.5"/>
               
               <!-- WITH MIDE-OS (bottom graph) -->
               <!-- YOU node -->
@@ -606,27 +609,26 @@
               
               <!-- MIDE-OS (single middleman) -->
               <circle cx="180" cy="310" r="20" fill="#22c55e" stroke="#4ade80" stroke-width="2" filter="drop-shadow(0 0 10px rgba(34,197,94,0.6))"/>
-              <text x="180" y="306" text-anchor="middle" fill="#05101a" font-size="11" font-weight="800">M</text>
-              <text x="180" y="318" text-anchor="middle" fill="#05101a" font-size="8" font-weight="800">OS</text>
+              <image x="168" y="298" width="24" height="24" href="logo.svg"/>
               
               <!-- AI Providers column (4 nodes) -->
-              <circle cx="320" cy="260" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="265" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
-              <circle cx="320" cy="305" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="310" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
-              <circle cx="320" cy="350" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="355" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
-              <circle cx="320" cy="395" r="18" fill="#0ea5e9" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px rgba(56,189,248,0.6))"/>
-              <text x="320" y="400" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
+              <circle cx="320" cy="260" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="265" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
+              <circle cx="320" cy="305" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="310" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
+              <circle cx="320" cy="350" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="355" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
+              <circle cx="320" cy="395" r="18" fill="#f97316" stroke="#fb923c" stroke-width="2" filter="drop-shadow(0 0 10px rgba(249,115,22,0.6))"/>
+              <text x="320" y="400" text-anchor="middle" fill="#05101a" font-size="18">🤖</text>
               
               <!-- YOU to MIDE-OS (single clean line) -->
-              <path d="M 60 310 L 158 310" stroke="#22c55e" stroke-width="2.5" fill="none" marker-end="url(#arrowGood)"/>
+              <path d="M 60 310 L 158 310" stroke="#1e40af" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)"/>
               
               <!-- MIDE-OS to AI Providers (clean organized connections) -->
-              <path d="M 200 302 L 300 266" stroke="#22c55e" stroke-width="1.8" fill="none" marker-end="url(#arrowGood)" opacity="0.8"/>
-              <path d="M 200 306 L 300 307" stroke="#22c55e" stroke-width="1.8" fill="none" marker-end="url(#arrowGood)" opacity="0.8"/>
-              <path d="M 200 314 L 300 348" stroke="#22c55e" stroke-width="1.8" fill="none" marker-end="url(#arrowGood)" opacity="0.8"/>
-              <path d="M 200 318 L 300 393" stroke="#22c55e" stroke-width="1.8" fill="none" marker-end="url(#arrowGood)" opacity="0.8"/>
+              <path d="M 200 302 L 300 266" stroke="#1e40af" stroke-width="1.8" fill="none" marker-end="url(#arrowBlue)" opacity="0.8"/>
+              <path d="M 200 306 L 300 307" stroke="#1e40af" stroke-width="1.8" fill="none" marker-end="url(#arrowBlue)" opacity="0.8"/>
+              <path d="M 200 314 L 300 348" stroke="#1e40af" stroke-width="1.8" fill="none" marker-end="url(#arrowBlue)" opacity="0.8"/>
+              <path d="M 200 318 L 300 393" stroke="#1e40af" stroke-width="1.8" fill="none" marker-end="url(#arrowBlue)" opacity="0.8"/>
             </svg>
             
             <div style="margin-top:16px;max-width:420px;text-align:center">
@@ -640,14 +642,13 @@
           <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;text-align:center;min-height:480px;padding:24px;position:relative;overflow:visible">
             <!-- Text content at top -->
             <div>
-                <p style="font-size:22px;font-weight:600;margin:0 0 16px;line-height:1.6;white-space:nowrap"><b>🦴 Meet the AI orchestration fossils 🦴</b></p>
+                <p style="font-size:22px;font-weight:600;margin:0 0 16px;line-height:1.6;white-space:nowrap"><b>... and they'll go the way of the dinosaur 🦴</b></p>
               <div style="position:relative;display:inline-block">
                 <span class="click-pointer right anim2" id="clickPointer" style="top:20%;left:-5%;transform:translateY(-50%)">👉</span>
                 <div class="competitor-box" id="competitorContainer" style="user-select:none">
                   <span class="competitor-text" id="competitorText">Prompt Store</span>
                 </div>
               </div>
-              <p style="font-size:18px;font-weight:600;margin:16px 0 0;line-height:1.6">Their oil fuels our <b style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">Personalization Engine</b>! 🚂</p>
             </div>
             
             <!-- Neon sign at bottom -->
@@ -666,6 +667,7 @@
                 </div>
               </div>
             </div>
+            <p style="font-size:18px;font-weight:600;margin:16px 0 0;line-height:1.6">Their oil fuels our <b style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">Personalization Engine</b>! 🚂</p>
           </div>
         </div>
       </div>
