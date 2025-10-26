@@ -921,9 +921,20 @@
           competitorEl.textContent = competitors[currentIndex];
         });
       }
-      // Modal uses inline onclick handlers
-    });
-  </script>
+        // Modal uses inline onclick handlers
+        
+        // Hide palette pointer on flow item click
+        const palettePointer = document.getElementById("palettePointer");
+        const flowItems = document.querySelectorAll(".flow-item");
+        if (palettePointer && flowItems.length > 0) {
+          flowItems.forEach((item) => {
+            item.addEventListener("click", () => {
+              palettePointer.classList.add("hidden");
+            });
+          });
+        }
+      });
+    </script>
 </head>
 <body>
   <div class="wrap">
@@ -1219,8 +1230,8 @@
                 <b>Build Product Spec</b>
                   <span style="opacity: 0.8">📐🤖</span>
               </div>
+               <span id="palettePointer" class="click-pointer up anim3" style="position: absolute; bottom: -1%; left: 35%; z-index: 10; pointer-events: none">👆</span>
             </div>
-            <span class="click-pointer up anim3" style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); z-index: 10; pointer-events: none">👆</span>
           </div>
             <div
               style="
@@ -2065,7 +2076,7 @@
                   limitless at-cost tooling!
                 </p>
                 <p style="font-size: 18px; font-weight: 600; line-height: 1.4; margin-top: 20%">
-                  <b>Meet the AI orchestration fossils:</b>
+                  <b>Meet the <i>paid</i> orchestration fossils:</b>
                 </p>
                 <div style="position: relative; display: inline-block; margin-bottom: 0">
                   <span
