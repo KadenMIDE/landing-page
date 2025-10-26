@@ -940,7 +940,9 @@
 
       <!-- Hero -->
       <section class="hero">
-        <div style="position: relative">
+        <div style="display: flex; gap: 24px; align-items: flex-start">
+        <!-- Introduction (invisible wrapper) -->
+        <div style="flex: 2">
           <div style="text-align: center">
             <span class="beta beta-v1">AI-powered • Socially Responsible • Forever-Free</span>
             <span class="beta beta-v2">AI-powered • Socially Responsible • Free</span>
@@ -1018,17 +1020,14 @@
             <span class="pill">⚡️ Rapid contextualization</span>
           </div>
 
-          <!-- Command Palette positioned relative to this container -->
+          </div>
+          
+          <!-- Command Palette -->
           <div
             class="panel figure"
             style="
-              position: absolute;
-              top: 0;
-              left: calc(100% + 20px);
+              flex: 1;
               min-height: 420px;
-              width: fit-content;
-              min-width: min(320px, calc(40vw - 40px));
-              max-width: min(400px, calc(40vw - 20px));
               display: flex;
               flex-direction: column;
               padding: 20px;
@@ -2238,7 +2237,7 @@
               "
             >
               We Philanthropize.
-            </h2>
+             </h2>
           </div>
         </div>
       </section>
