@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MIDE-OS — Agentic OS</title>
-  <meta name="description" content="MIDE-OS — Personal workflow automation platform." />
-  <meta property="og:title" content="MIDE-OS — Agentic OS." /> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MIDE-OS — Agentic OS</title>
+    <meta name="description" content="MIDE-OS — Personal workflow automation platform." />
+    <meta property="og:title" content="MIDE-OS — Agentic OS." />
     <meta
       property="og:description"
       content="Personal workflow automation powered by a global ecosystem of community-developed plugins. 100% free."
     />
-  <!-- Optional: add your social image -->
-  <!-- <meta property="og:image" content="https://YOUR-USER.github.io/mide-site/og.png" /> -->
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0ea5e9" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
-  
-  <!-- Custom SVG diagram styles -->
-  <style>
+    <!-- Optional: add your social image -->
+    <!-- <meta property="og:image" content="https://YOUR-USER.github.io/mide-site/og.png" /> -->
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- Custom SVG diagram styles -->
+    <style>
       .flow-node {
         fill: #0ea5e9;
         stroke: #38bdf8;
@@ -197,19 +197,19 @@
         stroke-width: 2;
         fill: none;
       }
-  </style>
+    </style>
 
-  <!-- Icons -->
-  <!-- Favicon (vector, scales anywhere) -->
+    <!-- Icons -->
+    <!-- Favicon (vector, scales anywhere) -->
     <link rel="icon" href="logo.svg" type="image/svg+xml" />
 
-  <!-- Fallback PNG for older browsers -->
+    <!-- Fallback PNG for older browsers -->
     <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
 
-  <!-- iOS homescreen icon -->
+    <!-- iOS homescreen icon -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
-  <style>
+    <style>
       :root {
         --bg: #0b0f14;
         --muted: #111827;
@@ -525,32 +525,32 @@
         padding: 2px 6px;
         border-radius: 8px;
       }
-    /* Highlight Join the MIDE Mission */
-    .mide-mission {
-      display: block;
-      margin: 28px 0 0 0;
-      text-align: center;
-      font-size: 1.34em;
-      font-weight: 900;
-      letter-spacing: 1.1px;
-      background: linear-gradient(90deg, var(--brand), var(--brand2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      padding: 8px 0 8px 0;
-      border-radius: 14px;
+      /* Highlight Join the MIDE Mission */
+      .mide-mission {
+        display: block;
+        margin: 28px 0 0 0;
+        text-align: center;
+        font-size: 1.34em;
+        font-weight: 900;
+        letter-spacing: 1.1px;
+        background: linear-gradient(90deg, var(--brand), var(--brand2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        padding: 8px 0 8px 0;
+        border-radius: 14px;
         box-shadow: 0 1.5px 12px 0 rgba(56, 189, 248, 0.1);
-      border: none;
-      cursor: pointer;
-      transition: filter 0.15s;
+        border: none;
+        cursor: pointer;
+        transition: filter 0.15s;
         text-shadow:
           0 0 10px rgba(56, 189, 248, 0.08),
           0 1px 2px #05101a44;
-      user-select: none;
-    }
+        user-select: none;
+      }
       .mide-mission:hover,
       .mide-mission:focus {
-      filter: brightness(1.2) drop-shadow(0 0 8px var(--brand2));
+        filter: brightness(1.2) drop-shadow(0 0 8px var(--brand2));
         text-shadow:
           0 0 16px var(--brand2),
           0 2px 6px var(--brand2);
@@ -609,12 +609,46 @@
         width: 0px;
         height: 0px;
       }
-      @keyframes workFlowWave {
-        0%, 100% {
-          opacity: 0.3;
-        }
-        50% {
+      @keyframes workFade {
+        0%,
+        30% {
           opacity: 1;
+        }
+        35%,
+        65% {
+          opacity: 0;
+        }
+        70%,
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes slideMideOs {
+        0%,
+        30% {
+          transform: translateX(0);
+        }
+        35%,
+        65% {
+          transform: translateX(21px);
+        }
+        70%,
+        100% {
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideFlows {
+        0%,
+        30% {
+          transform: translateX(0);
+        }
+        35%,
+        65% {
+          transform: translateX(-21px);
+        }
+        70%,
+        100% {
+          transform: translateX(0);
         }
       }
       .click-pointer {
@@ -791,22 +825,22 @@
           grid-template-columns: 1fr;
         }
       }
-  </style>
-  <script>
-    // —— minimal config so you can wire things without editing the markup —— //
-    const MIDE_CONFIG = {
-      DOCS_URL: "#TODO-docs",
+    </style>
+    <script>
+      // —— minimal config so you can wire things without editing the markup —— //
+      const MIDE_CONFIG = {
+        DOCS_URL: "#TODO-docs",
         INSTALL_URL: "#TODO-install", // e.g. Community plugin entry or repo README
         DEMO_URL: "#TODO-demo", // a short demo video or GIF
-      SPONSOR_URL: "https://github.com/sponsors/KadenMc",
+        SPONSOR_URL: "https://github.com/sponsors/KadenMc",
         ADV_URI_INSTALL:
           "obsidian://advanced-uri?vault=YOURVAULT&commandname=MIDE%3AInstall%20from%20URL&arg=ENCODED_RELEASE_ZIP_URL",
         COST_JSON: null, // e.g. https://your.github.io/cost.json -> { "goal": 4200, "raised": 1750 }
 
-      // Official repos (fill with real links when public)
-      REPO_OBSIDIAN_MIDE: "#TODO-obsidian-mide",
-      REPO_MIDE_PACK_DEV: "#TODO-mide-plugin-dev",
-      REPO_MIDE_RESEARCH: "#TODO-mide-research",
+        // Official repos (fill with real links when public)
+        REPO_OBSIDIAN_MIDE: "#TODO-obsidian-mide",
+        REPO_MIDE_PACK_DEV: "#TODO-mide-plugin-dev",
+        REPO_MIDE_RESEARCH: "#TODO-mide-research",
         REPO_MIDE_SDK_FLOWS: "#TODO-mide-sdk-flows",
         REPO_LANDING_PAGE: "#TODO-landing-page",
       };
@@ -824,37 +858,37 @@
           } catch {}
         }
         const pct = Math.max(0, Math.min(1, raised / goal));
-      elBar.style.transform = `scaleX(${pct})`;
+        elBar.style.transform = `scaleX(${pct})`;
         elLbl.textContent = `This month’s API costs covered: ${(pct * 100).toFixed(0)}%  (${format(raised)} / ${format(goal)})`;
         function format(n) {
           return "$" + n.toLocaleString();
-    }
+        }
       }
       addEventListener("DOMContentLoaded", () => {
-      hydrateCost();
+        hydrateCost();
         for (const [k, v] of Object.entries(MIDE_CONFIG)) {
-        const nodes = document.querySelectorAll(`[data-link="${k}"]`);
+          const nodes = document.querySelectorAll(`[data-link="${k}"]`);
           nodes.forEach((el) => {
             if (v) el.setAttribute("href", v);
           });
-      }
+        }
         document.getElementById("yr").textContent = new Date().getFullYear();
-      
-      // Neon sign asteroid states
-      let neonState = 0;
-      
-      const updateNeonSign = () => {
+
+        // Neon sign asteroid states
+        let neonState = 0;
+
+        const updateNeonSign = () => {
           const meteorFar = document.getElementById("neonMeteorFar");
           const meteorClose = document.getElementById("neonMeteorClose");
           const dinosEl = document.getElementById("neonDinos");
           const explosionEl = document.getElementById("neonExplosion");
-        
-        if (meteorFar && meteorClose && dinosEl && explosionEl) {
-          // Get all neon elements (excluding dino children)
-          const allNeon = [meteorFar, meteorClose, explosionEl];
+
+          if (meteorFar && meteorClose && dinosEl && explosionEl) {
+            // Get all neon elements (excluding dino children)
+            const allNeon = [meteorFar, meteorClose, explosionEl];
             const dinoEmojis = dinosEl.querySelectorAll(".neon-emoji");
-          
-          // Reset all to inactive
+
+            // Reset all to inactive
             allNeon.forEach((el) => {
               el.classList.remove("active", "explosive");
               el.classList.add("inactive");
@@ -863,10 +897,10 @@
               d.classList.remove("active");
               d.classList.add("inactive");
             });
-          
-          // Activate current state
-          if (neonState === 0) {
-            // State 1: Far meteor + dinosaurs (dinos on top)
+
+            // Activate current state
+            if (neonState === 0) {
+              // State 1: Far meteor + dinosaurs (dinos on top)
               meteorFar.classList.remove("inactive");
               meteorFar.classList.add("active");
               dinoEmojis.forEach((d) => {
@@ -875,8 +909,8 @@
               });
               dinosEl.style.zIndex = "15";
               explosionEl.style.zIndex = "5";
-          } else if (neonState === 1) {
-            // State 2: Close meteor + dinosaurs (dinos on top)
+            } else if (neonState === 1) {
+              // State 2: Close meteor + dinosaurs (dinos on top)
               meteorClose.classList.remove("inactive");
               meteorClose.classList.add("active");
               dinoEmojis.forEach((d) => {
@@ -885,52 +919,52 @@
               });
               dinosEl.style.zIndex = "15";
               explosionEl.style.zIndex = "5";
-          } else {
-            // State 3: Volatile explosion (explosion on top)
+            } else {
+              // State 3: Volatile explosion (explosion on top)
               explosionEl.classList.remove("inactive");
               explosionEl.classList.add("explosive");
               explosionEl.style.zIndex = "15";
               dinosEl.style.zIndex = "5";
+            }
           }
-        }
-        
-        neonState = (neonState + 1) % 3;
-      };
-      
-      setInterval(updateNeonSign, 1800);
-      updateNeonSign(); // Initialize first state
-      
-      // Competitor cycling
-      const competitors = [
+
+          neonState = (neonState + 1) % 3;
+        };
+
+        setInterval(updateNeonSign, 1800);
+        updateNeonSign(); // Initialize first state
+
+        // Competitor cycling
+        const competitors = [
           "AI-Powered IDE / Code Editor",
           "Web Interface",
           "Automation Platform as a Service (AaaS)",
           "Agent as a Service (AaaS)",
           "Prompt Store",
-      ];
-      let currentIndex = 0;
-      let isClicked = false;
-      
+        ];
+        let currentIndex = 0;
+        let isClicked = false;
+
         const competitorEl = document.getElementById("competitorText");
         const pointerEl = document.getElementById("clickPointer");
         const containerEl = document.getElementById("competitorContainer");
         const yearEl = document.getElementById("currentYear");
-      
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-      
-      if (containerEl && competitorEl && pointerEl) {
+
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        if (containerEl && competitorEl && pointerEl) {
           containerEl.addEventListener("click", () => {
-          if (!isClicked) {
-            isClicked = true;
+            if (!isClicked) {
+              isClicked = true;
               pointerEl.classList.add("hidden");
-          }
-          
-          currentIndex = (currentIndex + 1) % competitors.length;
-          competitorEl.textContent = competitors[currentIndex];
-        });
-      }
-      // Modal uses inline onclick handlers
-        
+            }
+
+            currentIndex = (currentIndex + 1) % competitors.length;
+            competitorEl.textContent = competitors[currentIndex];
+          });
+        }
+        // Modal uses inline onclick handlers
+
         // Hide palette pointer on flow item click
         const palettePointer = document.getElementById("palettePointer");
         const flowItems = document.querySelectorAll(".flow-item");
@@ -941,39 +975,39 @@
             });
           });
         }
-    });
-  </script>
-</head>
-<body>
-  <div class="wrap">
-    <!-- Top Nav -->
-    <div class="nav">
-      <div class="logo">
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- Top Nav -->
+      <div class="nav">
+        <div class="logo">
           <img src="logo.png" alt="MIDE Logo" style="height: 100px" />
-      </div>
+        </div>
         <div style="display: flex; gap: 16px">
-        <a href="#value">Value</a>
-        <a href="#flows">Flows</a>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#packages">Plugins</a>
-        <a href="#community">Community</a>
-        <a href="#support">Support</a>
-        <a href="#faq">FAQ</a>
+          <a href="#value">Value</a>
+          <a href="#flows">Flows</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#packages">Plugins</a>
+          <a href="#community">Community</a>
+          <a href="#support">Support</a>
+          <a href="#faq">FAQ</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Hero -->
-    <section class="hero">
+      <!-- Hero -->
+      <section class="hero">
         <div style="display: flex; gap: 24px; align-items: flex-start">
           <!-- Introduction (invisible wrapper) -->
           <div style="flex: 2">
             <div style="text-align: center">
-          <span class="beta beta-v1">AI-powered • Socially Responsible • Forever-Free</span>
-          <span class="beta beta-v2">AI-powered • Socially Responsible • Free</span>
-          <span class="beta beta-v3">AI-powered • Responsible • Free</span>
-          <span class="beta beta-v4">Responsible AI for Free</span>
-          <span class="beta beta-v5">Enjoy AI Freely</span>
-        </div>
+              <span class="beta beta-v1">AI-powered • Socially Responsible • Forever-Free</span>
+              <span class="beta beta-v2">AI-powered • Socially Responsible • Free</span>
+              <span class="beta beta-v3">AI-powered • Responsible • Free</span>
+              <span class="beta beta-v4">Responsible AI for Free</span>
+              <span class="beta beta-v5">Enjoy AI Freely</span>
+            </div>
             <h1
               class="h1"
               style="
@@ -1011,15 +1045,37 @@
                   >Second Brain</span
                 ></span
               >
-        </h1>
-            <p class="lead" style="text-align: center; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
-              <span style="font-size: 2.3em; vertical-align: middle; line-height: 1; display: inline-flex; align-items: center; margin-right: -1.5%;">🆓</span>
-              <span style="display: inline-block; vertical-align: middle;">automation, orchestration, and integration at your fingertips.</span>
+            </h1>
+            <p
+              class="lead"
+              style="
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  font-size: 2.3em;
+                  vertical-align: middle;
+                  line-height: 1;
+                  display: inline-flex;
+                  align-items: center;
+                  margin-right: -1.5%;
+                "
+                >🆓</span
+              >
+              <span style="display: inline-block; vertical-align: middle"
+                >automation, orchestration, and integration at your fingertips.</span
+              >
             </p>
-            <p class="lead" style="text-align: center; margin-top: 0.3em;">
+            <p class="lead" style="text-align: center; margin-top: 0.3em">
               No fees or lock-ins—your data stays snugly on your machine!
             </p>
-        <p class="callout">
+            <p class="callout">
               <span
                 style="
                   font-size: 1.1em;
@@ -1030,24 +1086,24 @@
                   font-weight: 800;
                 "
               >
-            YOUR data. YOUR workflows. YOUR Agentic OS.
-          </span>
-        </p>
-        <a href="#community" class="mide-mission">🚀 Join the MIDE Mission</a>
+                YOUR data. YOUR workflows. YOUR Agentic OS.
+              </span>
+            </p>
+            <a href="#community" class="mide-mission">🚀 Join the MIDE Mission</a>
             <div class="btns" style="justify-content: center">
-          <a class="btn primary" data-link="INSTALL_URL">⬇️ Install MIDE</a>
-          <a class="btn" data-link="DOCS_URL">📘 Docs</a>
-          <a class="btn" data-link="DEMO_URL">▶️ Demo</a>
-          <a class="btn" data-link="ADV_URI_INSTALL" title="Requires Advanced URI">➕ Add to Obsidian</a>
-        </div>
-            <div class="badges" style="justify-content: center">
-          <span class="pill">🏠 Self-hosted</span>
-          <span class="pill">🛡️ Security-focused</span>
-          <span class="pill">🔄 AI Provider-agnostic</span>
-          <span class="pill">⚡️ Rapid contextualization</span>
+              <a class="btn primary" data-link="INSTALL_URL">⬇️ Install MIDE</a>
+              <a class="btn" data-link="DOCS_URL">📘 Docs</a>
+              <a class="btn" data-link="DEMO_URL">▶️ Demo</a>
+              <a class="btn" data-link="ADV_URI_INSTALL" title="Requires Advanced URI">➕ Add to Chrome</a>
             </div>
-        </div>
-        
+            <div class="badges" style="justify-content: center">
+              <span class="pill">🏠 Self-hosted</span>
+              <span class="pill">🛡️ Security-forward</span>
+              <span class="pill">🔄 AI Provider-agnostic</span>
+              <span class="pill">⚡️ Dynamic, never-ending context</span>
+            </div>
+          </div>
+
           <!-- Command Palette -->
           <div
             class="panel figure"
@@ -1057,12 +1113,12 @@
               min-height: 420px;
               display: flex;
               flex-direction: column;
-              padding: 16px;
+              padding: 16px 32px 32px 32px;
               box-sizing: border-box;
               overflow: visible;
             "
           >
-            <div style="text-align: center; margin-bottom: 16px">
+            <div style="text-align: center; margin-bottom: 16px; padding: 0 12px -8px; overflow: visible">
               <div
                 style="
                   font-style: italic;
@@ -1073,12 +1129,31 @@
                   background-clip: text;
                   color: transparent;
                   font-weight: 600;
+                  padding: 0 8px;
+                  overflow: visible;
                 "
               >
-                 <span style="font-size: 18px"><b>Your </b></span><span style="font-size: 18px; animation: workFlowWave 3s ease-in-out infinite">Work</span><span style="font-size: 18px"><b>Flows</b></span>
-          </div>
-        </div>
-        <!-- Fake command palette showcasing flows -->
+                <span
+                  style="
+                    font-size: 18px;
+                    display: inline-block;
+                    color: var(--brand);
+                    animation: slideMideOs 8s ease-in-out infinite;
+                  "
+                  ><b>MIDE-OS&nbsp;</b></span
+                ><span style="font-size: 18px; color: #e5e7eb; animation: workFade 8s ease-in-out infinite">Work</span
+                ><span
+                  style="
+                    font-size: 18px;
+                    display: inline-block;
+                    color: var(--brand);
+                    animation: slideFlows 8s ease-in-out infinite;
+                  "
+                  ><b>Flows</b></span
+                >
+              </div>
+            </div>
+            <!-- Fake command palette showcasing flows -->
             <div
               style="
                 background: #0b1220;
@@ -1102,12 +1177,12 @@
                   text-align: center;
                 "
               >
-            <b>MIDE-OS Command Palette</b>
-          </div>
-          <!-- Fake search box with blinking cursor -->
-          <div class="fake-search">
-                <span style="color: #94a3b8; font-weight: 500">MIDE:</span>
-            <span class="fake-cursor"></span>
+                <b>Command Palette</b>
+              </div>
+              <!-- Fake search box with blinking cursor -->
+              <div class="fake-search">
+                <span style="color: #94a3b8; font-weight: 500">MIDE-OS:</span>
+                <span class="fake-cursor"></span>
               </div>
               <div
                 style="
@@ -1136,9 +1211,9 @@
                     align-items: center;
                   "
                 >
-                <b>Organize My Notes</b>
+                  <b>Organize My Notes</b>
                   <span style="opacity: 0.8">📝🤖</span>
-            </div>
+                </div>
                 <div
                   class="flow-item"
                   onclick="document.getElementById('mideModal').classList.add('show')"
@@ -1153,9 +1228,9 @@
                     align-items: center;
                   "
                 >
-              <b>Sort My Email</b>
+                  <b>Sort My Email</b>
                   <span style="opacity: 0.8">📧🤖</span>
-            </div>
+                </div>
                 <div
                   class="flow-item"
                   onclick="document.getElementById('mideModal').classList.add('show')"
@@ -1170,9 +1245,9 @@
                     align-items: center;
                   "
                 >
-              <b>Archive Browser Tabs</b>
+                  <b>Archive Browser Tabs</b>
                   <span style="opacity: 0.8">🌐💻</span>
-            </div>
+                </div>
                 <div
                   class="flow-item"
                   onclick="document.getElementById('mideModal').classList.add('show')"
@@ -1187,9 +1262,9 @@
                     align-items: center;
                   "
                 >
-              <b>Literature Extraction</b>
+                  <b>Literature Extraction</b>
                   <span style="opacity: 0.8">📄🤖</span>
-            </div>
+                </div>
                 <div
                   class="flow-item"
                   onclick="document.getElementById('mideModal').classList.add('show')"
@@ -1204,9 +1279,9 @@
                     align-items: center;
                   "
                 >
-              <b>Clean Voice Notes</b>
+                  <b>Clean Voice Notes</b>
                   <span style="opacity: 0.8">🎤🤖</span>
-            </div>
+                </div>
                 <div
                   class="flow-item"
                   onclick="document.getElementById('mideModal').classList.add('show')"
@@ -1221,9 +1296,9 @@
                     align-items: center;
                   "
                 >
-              <b>Split Big Notes</b>
+                  <b>Split Big Notes</b>
                   <span style="opacity: 0.8">✂️💻</span>
-            </div>
+                </div>
                 <div style="position: relative"></div>
                 <div
                   class="flow-item"
@@ -1239,19 +1314,24 @@
                     align-items: center;
                   "
                 >
-                <b>Build Product Spec</b>
+                  <b>Build Product Spec</b>
                   <span style="opacity: 0.8">📐🤖</span>
+                </div>
+                <span
+                  id="palettePointer"
+                  class="click-pointer up anim3"
+                  style="position: absolute; bottom: -0.5%; left: 35%; z-index: 10; pointer-events: none"
+                  >👆</span
+                >
               </div>
-               <span id="palettePointer" class="click-pointer up anim3" style="position: absolute; bottom: -0.5%; left: 35%; z-index: 10; pointer-events: none">👆</span>
             </div>
+          </div>
         </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Flows -->
-    <section id="flows" class="sec">
-      <!-- Visual Flow Diagram - Merged Card with Flowing Gradient -->
+      <!-- Flows -->
+      <section id="flows" class="sec">
+        <!-- Visual Flow Diagram - Merged Card with Flowing Gradient -->
         <div style="position: relative">
           <h2
             style="
@@ -1282,7 +1362,7 @@
               padding: 24px;
             "
           >
-          <!-- Section 1: Flows Chain -->
+            <!-- Section 1: Flows Chain -->
             <div
               style="
                 position: relative;
@@ -1307,15 +1387,15 @@
                     box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
                   "
                 >
-                FLOWS CHAIN...
-              </div>
+                  FLOWS CHAIN...
+                </div>
                 <p style="color: var(--text); margin: 0 0 6px; font-size: 16px; font-weight: 600">
-                Procedural Flow Chaining
-              </p>
+                  Procedural Flow Chaining
+                </p>
                 <p style="margin: 0; font-weight: 800; font-size: 14px; color: var(--brand)">
-                Advanced • Limitless • Dependable
-              </p>
-            </div>
+                  Advanced • Limitless • Dependable
+                </p>
+              </div>
               <div
                 style="
                   position: relative;
@@ -1339,7 +1419,7 @@
                   🌊
                 </div>
                 <svg width="280" height="80" viewBox="0 0 280 80" style="overflow: visible">
-                <defs>
+                  <defs>
                     <marker
                       id="arrowCyan"
                       markerWidth="10"
@@ -1350,10 +1430,10 @@
                       markerUnits="strokeWidth"
                     >
                       <path d="M0,0 L0,6 L9,3 z" fill="#38bdf8" />
-                  </marker>
-                </defs>
+                    </marker>
+                  </defs>
                   <rect class="flow-node" x="0" y="25" width="60" height="30" rx="6" />
-                <text x="30" y="45" text-anchor="middle" fill="#05101a" font-size="12" font-weight="700">Flow 1</text>
+                  <text x="30" y="45" text-anchor="middle" fill="#05101a" font-size="12" font-weight="700">Flow 1</text>
                   <path class="flow-line" d="M 65 40 L 85 40" marker-end="url(#arrowCyan)" />
                   <rect class="flow-node" x="90" y="25" width="60" height="30" rx="6" />
                   <text x="120" y="45" text-anchor="middle" fill="#05101a" font-size="12" font-weight="700">
@@ -1364,11 +1444,11 @@
                   <text x="210" y="45" text-anchor="middle" fill="#05101a" font-size="12" font-weight="700">
                     Flow 3
                   </text>
-              </svg>
+                </svg>
+              </div>
             </div>
-          </div>
 
-          <!-- Section 2: The Brain -->
+            <!-- Section 2: The Brain -->
             <div
               style="
                 position: relative;
@@ -1402,24 +1482,24 @@
                   🧠
                 </div>
                 <svg width="200" height="120" viewBox="0 0 200 120" style="overflow: visible">
-                <defs>
-                  <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                  <defs>
+                    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
                       <path d="M0,0 L0,6 L9,3 z" fill="#a78bfa" />
-                  </marker>
-                </defs>
-                <!-- Circular flow -->
+                    </marker>
+                  </defs>
+                  <!-- Circular flow -->
                   <circle class="brain-node" cx="100" cy="60" r="25" />
-                <text x="100" y="55" text-anchor="middle" fill="#05101a" font-size="16" font-weight="700">👤</text>
-                <text x="100" y="70" text-anchor="middle" fill="#05101a" font-size="10" font-weight="700">YOU</text>
+                  <text x="100" y="55" text-anchor="middle" fill="#05101a" font-size="16" font-weight="700">👤</text>
+                  <text x="100" y="70" text-anchor="middle" fill="#05101a" font-size="10" font-weight="700">YOU</text>
                   <circle class="brain-node" cx="30" cy="30" r="20" />
-                <text x="30" y="35" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
+                  <text x="30" y="35" text-anchor="middle" fill="#05101a" font-size="14">🤖</text>
                   <circle class="brain-node" cx="170" cy="90" r="20" />
-                <text x="170" y="95" text-anchor="middle" fill="#05101a" font-size="14">💻</text>
+                  <text x="170" y="95" text-anchor="middle" fill="#05101a" font-size="14">💻</text>
                   <path class="brain-line" d="M 48 38 Q 75 50 80 60" marker-end="url(#arrowPurple)" />
                   <path class="brain-line" d="M 120 75 Q 145 82 150 88" marker-end="url(#arrowPurple)" />
                   <path class="brain-line" d="M 155 78 Q 100 40 48 32" marker-end="url(#arrowPurple)" />
-              </svg>
-            </div>
+                </svg>
+              </div>
               <div style="text-align: right">
                 <div
                   style="
@@ -1434,8 +1514,8 @@
                     box-shadow: 0 0 30px rgba(167, 139, 250, 0.5);
                   "
                 >
-                ... WITH YOUR BRAIN
-              </div>
+                  ... WITH YOUR BRAIN ...
+                </div>
                 <div
                   style="
                     display: flex;
@@ -1456,7 +1536,7 @@
                     "
                   >
                     🤖 AI
-              </div>
+                  </div>
                   <span style="font-size: 28px; color: var(--brand2)">⇄</span>
                   <div
                     style="
@@ -1497,11 +1577,11 @@
                     >Personalization Engine</b
                   >
                   runs to protect your interests!
-              </p>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <!-- Section 3: It's Insane -->
+            <!-- Section 3: It's Insane -->
             <div
               style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center"
             >
@@ -1519,16 +1599,14 @@
                     box-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
                   "
                 >
-                IT'S INSANE.
-              </div>
+                  ... TO SELF-TRAIN.
+                </div>
                 <p style="color: var(--text); margin: 0 0 8px; font-size: 16px; font-weight: 600">
-                  Draw on a <b style="color: var(--warn)">GLOBAL</b> bank of user-created, needs-driven workflows!
-              </p>
-                <p style="margin: 0; font-weight: 800; font-size: 14px; color: var(--warn)">
-                OR build your dream Flow in <b>MINUTES</b> with Self-Creation! 🚀
-                MIDE-OS Evolve: Create Flows using Flows!
-              </p>
-            </div>
+                  Draw on a <b style="color: var(--warn)">GLOBALLY SHARED</b> bank of needs-driven workflows!<br />
+                  Attain your dream automation in <b>MINUTES</b> with
+                  <b style="color: var(--warn)">MIDE-OS Evolve</b>—<i>create Flows using Flows!</i>
+                </p>
+              </div>
               <div
                 style="
                   position: relative;
@@ -1552,16 +1630,16 @@
                   🤯
                 </div>
                 <svg width="250" height="100" viewBox="0 0 250 100" style="overflow: visible">
-                <defs>
-                  <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                  <defs>
+                    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
                       <path d="M0,0 L0,6 L9,3 z" fill="#fb923c" />
-                  </marker>
-                </defs>
-                <!-- You in center branching to flows -->
+                    </marker>
+                  </defs>
+                  <!-- You in center branching to flows -->
                   <circle class="insane-node" cx="30" cy="50" r="22" />
-                <text x="30" y="48" text-anchor="middle" fill="#05101a" font-size="16">👤</text>
-                <text x="30" y="60" text-anchor="middle" fill="#05101a" font-size="9" font-weight="700">YOU</text>
-                <!-- Flows -->
+                  <text x="30" y="48" text-anchor="middle" fill="#05101a" font-size="16">👤</text>
+                  <text x="30" y="60" text-anchor="middle" fill="#05101a" font-size="9" font-weight="700">YOU</text>
+                  <!-- Flows -->
                   <rect class="insane-node" x="90" y="5" width="60" height="24" rx="6" />
                   <text x="120" y="20" text-anchor="middle" fill="#05101a" font-size="11" font-weight="700">
                     Flow A
@@ -1574,24 +1652,24 @@
                   <text x="120" y="86" text-anchor="middle" fill="#05101a" font-size="11" font-weight="700">
                     Flow C
                   </text>
-                <!-- Output -->
+                  <!-- Output -->
                   <circle class="insane-node" cx="210" cy="50" r="22" />
-                <text x="210" y="54" text-anchor="middle" fill="#05101a" font-size="18">✨</text>
-                <!-- Connections -->
+                  <text x="210" y="54" text-anchor="middle" fill="#05101a" font-size="18">✨</text>
+                  <!-- Connections -->
                   <path class="insane-line" d="M 52 40 L 90 17" marker-end="url(#arrowOrange)" />
                   <path class="insane-line" d="M 52 50 L 90 50" marker-end="url(#arrowOrange)" />
                   <path class="insane-line" d="M 52 60 L 90 83" marker-end="url(#arrowOrange)" />
                   <path class="insane-line" d="M 150 17 L 188 40" marker-end="url(#arrowOrange)" />
                   <path class="insane-line" d="M 150 50 L 188 50" marker-end="url(#arrowOrange)" />
                   <path class="insane-line" d="M 150 83 L 188 60" marker-end="url(#arrowOrange)" />
-              </svg>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- We're Disruptive - Middelman Bypass & Competitor Callout -->
+      <!-- We're Disruptive - Middelman Bypass & Competitor Callout -->
       <section class="sec" style="padding: 48px 0 0 0">
         <div class="grid-2" style="align-items: stretch; gap: 24px">
           <!-- Left Column: We Orchestrate -->
@@ -2032,8 +2110,8 @@
                   opacity="0.8"
                 />
               </svg>
-        </div>
-      </div>
+            </div>
+          </div>
 
           <!-- Right Column: We Integrate -->
           <div style="display: flex; flex-direction: column; min-width: 0">
@@ -2086,10 +2164,10 @@
                     >👉</span
                   >
                   <div class="competitor-box" id="competitorContainer" style="user-select: none; margin-top: -24px">
-                  <span class="competitor-text" id="competitorText">Prompt Store</span>
+                    <span class="competitor-text" id="competitorText">Prompt Store</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
               <!-- Neon sign at bottom -->
               <div
@@ -2151,7 +2229,7 @@
                           style="color: #22c55e; font-size: 32px; transform: scaleX(-1) rotate(10deg)"
                           >🦕</span
                         >
-                    </div>
+                      </div>
                       <span
                         class="neon-emoji inactive"
                         id="neonExplosion"
@@ -2165,9 +2243,9 @@
                         "
                         >💥</span
                       >
+                    </div>
                   </div>
                 </div>
-              </div>
                 <p style="font-size: 18px; font-weight: 600; margin-top: 14%; margin-bottom: 0; line-height: 1.6">
                   Their oil fuels our
                   <b
@@ -2180,11 +2258,11 @@
                     >Personalization Engine</b
                   >! 🚂
                 </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <!-- Mission and Method Cards -->
       <section class="sec" style="padding: 24px 0 48px 0">
@@ -2192,7 +2270,7 @@
           <div class="card" style="text-align: center; position: relative; overflow: hidden">
             <div style="font-size: 48px; margin-bottom: 12px; filter: drop-shadow(0 0 25px rgba(234, 179, 8, 0.6))">
               🫵🤝
-              </div>
+            </div>
             <h3
               style="
                 margin: 0 0 8px;
@@ -2206,14 +2284,26 @@
               The Mission
             </h3>
             <p class="mute" style="margin: 0; font-size: 15px"><b>We're for you, by you</b></p>
-            <div style="display: inline-block; padding: 8px 20px; background: linear-gradient(90deg, #eab308, #fbbf24); color: #05101a; border-radius: 999px; font-weight: 900; font-size: 14px; margin-top: 12px; box-shadow: 0 0 20px rgba(234, 179, 8, 0.4)">
+            <div
+              style="
+                display: inline-block;
+                padding: 8px 20px;
+                background: linear-gradient(90deg, #eab308, #fbbf24);
+                color: #05101a;
+                border-radius: 999px;
+                font-weight: 900;
+                font-size: 14px;
+                margin-top: 12px;
+                box-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
+              "
+            >
               ORCHESTRATE ANYTHING
             </div>
           </div>
           <div class="card" style="text-align: center; position: relative; overflow: hidden">
             <div style="font-size: 48px; margin-bottom: 12px; filter: drop-shadow(0 0 25px rgba(249, 115, 34, 0.6))">
               ⚡🛞
-                  </div>
+            </div>
             <h3
               style="
                 margin: 0 0 8px;
@@ -2229,12 +2319,24 @@
             <p class="mute" style="margin: 0; font-size: 15px">
               <b>We don't sell or reinvent the wheel—we power it</b>
             </p>
-            <div style="display: inline-block; padding: 8px 20px; background: linear-gradient(90deg, #f97316, #fb923c); color: #05101a; border-radius: 999px; font-weight: 900; font-size: 14px; margin-top: 12px; box-shadow: 0 0 20px rgba(249, 115, 34, 0.4)">
+            <div
+              style="
+                display: inline-block;
+                padding: 8px 20px;
+                background: linear-gradient(90deg, #f97316, #fb923c);
+                color: #05101a;
+                border-radius: 999px;
+                font-weight: 900;
+                font-size: 14px;
+                margin-top: 12px;
+                box-shadow: 0 0 20px rgba(249, 115, 34, 0.4);
+              "
+            >
               INTEGRATE EVERYTHING
-                </div>
-              </div>
             </div>
-        
+          </div>
+        </div>
+
         <!-- The Mandate (centered below) -->
         <div style="max-width: 600px; margin: 24px auto 0">
           <div class="card" style="text-align: center; position: relative; overflow: hidden">
@@ -2254,12 +2356,24 @@
               The Mandate
             </h3>
             <p class="mute" style="margin: 0; font-size: 15px"><b>We protect your interests in every fashion</b></p>
-            <div style="display: inline-block; padding: 8px 20px; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #05101a; border-radius: 999px; font-weight: 900; font-size: 14px; margin-top: 12px; box-shadow: 0 0 20px rgba(14, 165, 233, 0.4)">
+            <div
+              style="
+                display: inline-block;
+                padding: 8px 20px;
+                background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+                color: #05101a;
+                border-radius: 999px;
+                font-weight: 900;
+                font-size: 14px;
+                margin-top: 12px;
+                box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+              "
+            >
               YOUR INTERESTS ARE OURS
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <!-- We're Philanthropic - No Corporate Interests & MIDE Foundations -->
       <section class="sec" style="padding: 48px 0">
@@ -2276,215 +2390,321 @@
           >
             We Philanthropize.
           </h2>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <!-- Value Proposition -->
-    <section id="value" class="sec">
-      <h2>Is <span style="background: linear-gradient(90deg, var(--brand), var(--brand2)); -webkit-background-clip: text; background-clip: text; color: transparent;">MIDE-OS</span> Right For You?</h2>
+      <!-- We're Disruptive - Middelman Bypass & Competitor Callout -->
+      <section class="sec" style="padding: 0 0 0 0">
+        <div class="grid-2" style="align-items: stretch; gap: 24px">
+          <!-- Left Column: We Democratize -->
+          <div style="display: flex; flex-direction: column; min-width: 0">
+            <h2
+              style="
+                margin: 0 0 16px 0;
+                font-size: 32px;
+                text-align: center;
+                background: linear-gradient(90deg, var(--brand), var(--brand2));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+            >
+              ⚖️ We Democratize AI...
+            </h2>
+            <!-- Left Card: Skip the AI middleman -->
+            <div
+              class="card"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 480px;
+                padding: 24px;
+                flex: 1;
+              "
+            >
+              <p style="font-size: 24px; font-weight: 700; margin: 0 0 12px; line-height: 1.6; white-space: nowrap">
+                🛑 Stop paying the AI middlemen...
+              </p>
+              <p style="font-size: 13px; margin: 0; line-height: 1.5">
+                No
+                <b style="color: #ef4444; text-shadow: 0 0 10px rgba(239, 68, 68, 0.5)">orchestration fees</b>—enjoy
+                at-provider costs!
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: We Give Back -->
+          <div style="display: flex; flex-direction: column; min-width: 0">
+            <h2
+              style="
+                margin: 0 0 16px 0;
+                font-size: 32px;
+                text-align: center;
+                background: linear-gradient(90deg, var(--brand), var(--brand2));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+            >
+              And We Give Back ❤️
+            </h2>
+            <!-- Right Card: Meet the fossils + Neon Sign (MERGED) -->
+            <div
+              class="card"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+                min-height: 480px;
+                padding: 24px;
+                position: relative;
+                overflow: visible;
+                flex: 1;
+              "
+            >
+              <!-- Text content -->
+              <div style="display: flex; flex-direction: column; height: 100%; justify-content: center; gap: 16px">
+                <p style="font-size: 20px; font-weight: 700; margin: 0; line-height: 1.5; color: var(--text)">
+                  We focus on what's important: <br/>
+                  <b style="background: linear-gradient(90deg, var(--brand), var(--brand2)); -webkit-background-clip: text; background-clip: text; color: transparent;">Meaningful work to help the community.</b>
+                </p>
+                <p style="font-size: 16px; margin: 0; line-height: 1.6; color: var(--sub)">
+                  That's why we're hosting <b style="color: var(--ok)">MIDE-OS Foundations</b>. We issue grants to carefully selected Public Foundations championing the causes <i>you</i> care about.
+                </p>
+                <p style="font-size: 14px; margin: 0; line-height: 1.5; color: var(--sub)">
+                  Once our prudent reserve is met, income overflows to these foundations. Each year, <b>you</b> vote for <b style="color: var(--ok)">The People's Choice</b>—one foundation to receive an extra grant. Transparent Finances. Always.
+                </p>
+                <a href="#TODO-foundations" style="display: inline-block; padding: 10px 24px; background: linear-gradient(90deg, var(--ok), #4ade80); color: #05101a; border-radius: 999px; font-weight: 900; font-size: 16px; margin-top: 8px; box-shadow: 0 0 25px rgba(34, 197, 94, 0.5); text-decoration: none; align-self: center">
+                  ✨ Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Value Proposition -->
+      <section id="value" class="sec">
+        <h2>
+          Is
+          <span
+            style="
+              background: linear-gradient(90deg, var(--brand), var(--brand2));
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+            "
+            >MIDE-OS</span
+          >
+          Right For You?
+        </h2>
         <p class="mute" style="max-width: 80ch; margin-bottom: 20px">
           It's right for <b>YOU</b>. Knowledge workers obsessed with PKM. Researchers drowning in papers. Developers who
           want more sleep. Hobbyists building passion projects. MIDE-OS is your personal automation powerhouse.
-      </p>
-      <div class="grid-3">
-        <div class="card">
-          <div class="kicker">Self-Hosted</div>
-          <h3>Your data stays yours</h3>
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="kicker">Self-Hosted</div>
+            <h3>Your data stays yours</h3>
             <p class="mute">
               Everything runs locally. Zero cloud dependencies. Your data never leaves your machine unless you
               explicitly choose an external service. Free, cross-platform, and local-first.
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Personalized</div>
-          <h3>MIDE knows what you know</h3>
+          </div>
+          <div class="card">
+            <div class="kicker">Personalized</div>
+            <h3>MIDE knows what you know</h3>
             <p class="mute">
               Your vault becomes the context engine for everything. MIDE knows what you know, so it acts like a true
               Second Brain. Feed your agents and Flows 🌊 exactly what they need. Zero duplicates.
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Contextualization</div>
-          <h3>Pay for reasoning, not repetition ⚡️</h3>
-          <p class="mute">
+          </div>
+          <div class="card">
+            <div class="kicker">Contextualization</div>
+            <h3>Pay for reasoning, not repetition ⚡️</h3>
+            <p class="mute">
               Smart context injection means your agents get exactly what they need—nothing more, nothing less. No
               duplicate docs. No wasted tokens. Just faster results and lower costs.
-          </p>
-          <ul class="list">
-            <li>⚡ Zero duplicate context—save on API calls.</li>
-            <li>🧠 Dynamic, always-current agent prompts.</li>
-            <li>💸 Smaller context windows = smaller bills.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="kicker">Community</div>
-          <h3>Plugin ecosystem you control</h3>
-          <p class="mute">
+            </p>
+            <ul class="list">
+              <li>⚡ Zero duplicate context—save on API calls.</li>
+              <li>🧠 Dynamic, always-current agent prompts.</li>
+              <li>💸 Smaller context windows = smaller bills.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="kicker">Community</div>
+            <h3>Plugin ecosystem you control</h3>
+            <p class="mute">
               Currently, MIDE plugins are packaged as Obsidian plugins which chalk full of supercharging Flows 🌊 Find
               them on GitHub (<code>mide-os</code> topic), in the Plugin Browser, or Community Plugin Store.
-            <b>One-click updates</b> alongside your regular Obsidian plugins. It just works.
-          </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Development</div>
-          <h3>Every user can be a developer 🧰</h3>
+              <b>One-click updates</b> alongside your regular Obsidian plugins. It just works.
+            </p>
+          </div>
+          <div class="card">
+            <div class="kicker">Development</div>
+            <h3>Every user can be a developer 🧰</h3>
             <p class="mute">
               Stupid-simple to build, brilliant in results. The SDK, templates, and authoring tools let anyone—from
               hobbyists to engineers—create automations without friction. <b>You want it? Build it.</b>
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Human-in-the-Loop</div>
-          <h3>You're always in control</h3>
+          </div>
+          <div class="card">
+            <div class="kicker">Human-in-the-Loop</div>
+            <h3>You're always in control</h3>
             <p class="mute">
               Seamless human-in-the-loop design. Agents handle reasoning, you handle decisions. Permission prompts when
               needed. Zero unwanted automation.
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Security</div>
-          <h3>Safe by design</h3>
+          </div>
+          <div class="card">
+            <div class="kicker">Security</div>
+            <h3>Safe by design</h3>
             <p class="mute">
               Plugin verification, permission prompts, and prompt-injection linting. Built-in security at every layer
               protects your data, privacy, and time.
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">AI Provider-Agnostic</div>
-          <h3>Never locked in</h3>
+          </div>
+          <div class="card">
+            <div class="kicker">AI Provider-Agnostic</div>
+            <h3>Never locked in</h3>
             <p class="mute">
               OpenAI. Anthropic. Local models. Whatever you want. MIDE-OS doesn't compete with agentic SDKs—it
               <b>uses</b> them. Switch providers anytime. Zero workflow rewrites.
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Open</div>
-          <h3>Principled software</h3>
+          </div>
+          <div class="card">
+            <div class="kicker">Open</div>
+            <h3>Principled software</h3>
             <p class="mute">
               BSD Zero Clause core. Community plugins. Flexible SDK. No corporate interests. No VC pressure. Just
               software that respects you.
             </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Philosophy / Cost -->
-    <section id="philosophy" class="sec">
-      <h2>Save Money. Use Agents Smarter.</h2>
-      <div class="grid-2">
-        <div class="card">
-          <p class="mute">
+      <!-- Philosophy / Cost -->
+      <section id="philosophy" class="sec">
+        <h2>Save Money. Use Agents Smarter.</h2>
+        <div class="grid-2">
+          <div class="card">
+            <p class="mute">
               Agents don't need to be expensive if you're smart about it. Programmatic Flows handle repetitive work.
               Agents handle reasoning. Local-first = zero orchestration fees.
-          </p>
-          <ul class="list">
-            <li><b>Agents for reasoning only.</b> Everything else runs as a Flow 🌊.</li>
-            <li><b>Your vault = smarter context.</b> Rich knowledge keeps agents on track.</li>
-            <li><b>Chain small steps.</b> Beats giant, expensive prompts.</li>
-            <li><b>Zero duplicate context.</b> MIDE-OS strips redundancy automatically.</li>
-          </ul>
-          <p class="note"><b>Bottom line:</b> Smarter Flows 🌊 = fewer tokens = more money in your pocket.</p>
+            </p>
+            <ul class="list">
+              <li><b>Agents for reasoning only.</b> Everything else runs as a Flow 🌊.</li>
+              <li><b>Your vault = smarter context.</b> Rich knowledge keeps agents on track.</li>
+              <li><b>Chain small steps.</b> Beats giant, expensive prompts.</li>
+              <li><b>Zero duplicate context.</b> MIDE-OS strips redundancy automatically.</li>
+            </ul>
+            <p class="note"><b>Bottom line:</b> Smarter Flows 🌊 = fewer tokens = more money in your pocket.</p>
+          </div>
+          <div class="card">
+            <div class="kicker">Practical wins</div>
+            <ul class="list">
+              <li>Batch operations—avoid repeat calls.</li>
+              <li>Structured prompts—reduce retries.</li>
+              <li>Smart routing: code → Flows 🌊 → agents (only when needed).</li>
+              <li>Reusable Flows across plugins—build once, use everywhere.</li>
+              <li>Small models excel at focused tasks. Not just for expensive agents.</li>
+            </ul>
+          </div>
         </div>
-        <div class="card">
-          <div class="kicker">Practical wins</div>
-          <ul class="list">
-            <li>Batch operations—avoid repeat calls.</li>
-            <li>Structured prompts—reduce retries.</li>
-            <li>Smart routing: code → Flows 🌊 → agents (only when needed).</li>
-            <li>Reusable Flows across plugins—build once, use everywhere.</li>
-            <li>Small models excel at focused tasks. Not just for expensive agents.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Official Plugins -->
-    <section id="packages" class="sec">
-      <h2>Official Plugins</h2>
+      <!-- Official Plugins -->
+      <section id="packages" class="sec">
+        <h2>Official Plugins</h2>
 
-      <!-- Core -->
+        <!-- Core -->
         <div class="card" style="margin-bottom: 16px">
-        <span class="kicker">Core</span>
+          <span class="kicker">Core</span>
           <h3>
             <a data-link="REPO_OBSIDIAN_MIDE">obsidian-mide</a>
             <span class="note">(MIDE's Personalization Engine)</span>
           </h3>
-        <p class="mute">
+          <p class="mute">
             The foundation. Obsidian plugin + MCP server in one. Flow 🌊 chaining, smart contextualization, permissions,
             Plugin Browser, and the SDK runtime. Built by <b>Kaden McKeen</b>, the MIDE Champion. Everything you need to
             turn your vault into a workflow powerhouse.
-        </p>
-        <div class="meta">
-          <span class="tag">Private (beta)</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">BSD Zero Clause</span>
-          <span class="tag">100% user-supported</span>
+          </p>
+          <div class="meta">
+            <span class="tag">Private (beta)</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">BSD Zero Clause</span>
+            <span class="tag">100% user-supported</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Plugins grid -->
-      <div class="grid-3">
-        <div class="card">
-          <div class="kicker">Plugin</div>
-          <h3><a data-link="REPO_MIDE_PACK_DEV">mide-plugin-dev</a></h3>
+        <!-- Plugins grid -->
+        <div class="grid-3">
+          <div class="card">
+            <div class="kicker">Plugin</div>
+            <h3><a data-link="REPO_MIDE_PACK_DEV">mide-plugin-dev</a></h3>
             <p class="mute">
               <b>Build MIDE plugins using MIDE.</b> Scaffold, validate, iterate—all with advanced self-development Flows
               🌊. Fork, edit, ship. No heavy dev setup required.
             </p>
-          <div class="meta">
-            <span class="tag">Private (beta)</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">BSD Zero Clause</span>
+            <div class="meta">
+              <span class="tag">Private (beta)</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">BSD Zero Clause</span>
+            </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="kicker">Plugin</div>
-          <h3><a data-link="REPO_MIDE_RESEARCH">mide-research</a></h3>
+          <div class="card">
+            <div class="kicker">Plugin</div>
+            <h3><a data-link="REPO_MIDE_RESEARCH">mide-research</a></h3>
             <p class="mute">
               <b>Research workflows, automated.</b> Literature review Flows 🌊, note pipelines, repeatable patterns.
               Built for researchers who live in their vault.
             </p>
-          <div class="meta">
-            <span class="tag">Private (beta)</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">BSD Zero Clause</span>
+            <div class="meta">
+              <span class="tag">Private (beta)</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">BSD Zero Clause</span>
+            </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="kicker">Plugin</div>
-          <h3><a data-link="REPO_MIDE_SDK_FLOWS">mide-sdk-flows</a></h3>
+          <div class="card">
+            <div class="kicker">Plugin</div>
+            <h3><a data-link="REPO_MIDE_SDK_FLOWS">mide-sdk-flows</a></h3>
             <p class="mute">
               <b>SDK functionality as Flows 🌊.</b> Learn the API, test capabilities, compose new Flows. The SDK, but
               interactive.
             </p>
-          <div class="meta">
-            <span class="tag">Private (beta)</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">BSD Zero Clause</span>
+            <div class="meta">
+              <span class="tag">Private (beta)</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">BSD Zero Clause</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Site repo -->
+        <!-- Site repo -->
         <div class="card" style="margin-top: 16px">
-        <div class="kicker">Meta</div>
-        <h3><a data-link="REPO_LANDING_PAGE">landing-page</a></h3>
-        <p class="mute">This page. Public, lightweight, forkable. Make it yours.</p>
-        <div class="meta">
-          <span class="tag">Public</span>
+          <div class="kicker">Meta</div>
+          <h3><a data-link="REPO_LANDING_PAGE">landing-page</a></h3>
+          <p class="mute">This page. Public, lightweight, forkable. Make it yours.</p>
+          <div class="meta">
+            <span class="tag">Public</span>
+          </div>
         </div>
-      </div>
 
         <p class="note" style="margin-top: 10px">
           <b>Beta note:</b> Some plugins are private while we stabilize the SDK. Public releases coming soon—watch the
           README and Plugin Browser.
-      </p>
-    </section>
+        </p>
+      </section>
 
-    <!-- Community Development -->
-    <section id="community" class="sec">
+      <!-- Community Development -->
+      <section id="community" class="sec">
         <h2
           style="
             background: linear-gradient(90deg, #22c55e, #4fffa3);
@@ -2496,49 +2716,49 @@
         >
           Build With Our Community
         </h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="kicker">SDK</div>
-          <h3>Guardrailed APIs that just work</h3>
+        <div class="grid-3">
+          <div class="card">
+            <div class="kicker">SDK</div>
+            <h3>Guardrailed APIs that just work</h3>
             <p class="mute">
               <code>@mide/sdk</code> gives you <code>vault</code>, <code>ui</code>, <code>llm</code>, <code>http</code>,
               and more—with built-in permissions and TypeScript typings. Safe by default.
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Discovery</div>
-          <h3>Plugin Marketplace</h3>
+          </div>
+          <div class="card">
+            <div class="kicker">Discovery</div>
+            <h3>Plugin Marketplace</h3>
             <p class="mute">
               GitHub topic <code>obsidian-mide-plugin</code>, Plugin Browser, or Community Plugin Store. Verified
               plugins badged. Updates work like any Obsidian plugin—one click, done.
             </p>
-        </div>
-        <div class="card">
-          <div class="kicker">Publish</div>
-          <h3>Zero hosting costs</h3>
+          </div>
+          <div class="card">
+            <div class="kicker">Publish</div>
+            <h3>Zero hosting costs</h3>
             <p class="mute">
               Ship as an Obsidian plugin with a <code>mide/</code> folder and <code>mide-plugin.json</code>. GitHub
               Releases handle everything. No servers to maintain.
             </p>
+          </div>
         </div>
-      </div>
         <div class="panel" style="margin-top: 12px">
-        <b>"Add to MIDE-OS"</b> deep-link example (requires Advanced-URI):  
+          <b>"Add to MIDE-OS"</b> deep-link example (requires Advanced-URI):
           <code
             data-link="ADV_URI_INSTALL"
             style="display: block; overflow: auto; white-space: nowrap; margin-top: 6px"
           ></code>
-      </div>
+        </div>
         <p class="note" style="margin-top: 16px; text-align: center; font-size: 15px">
           <b>AI for you, by you.</b> Stop paying for orchestration. Put general-purpose automation platforms out of
           business. Keep that money in your pocket.
-      </p>
-    </section>
+        </p>
+      </section>
 
-    <!-- Testimonials (placeholder) -->
-    <section class="sec">
-      <h2>What Users Say</h2>
-      <div class="grid-3">
+      <!-- Testimonials (placeholder) -->
+      <section class="sec">
+        <h2>What Users Say</h2>
+        <div class="grid-3">
           <div class="card">
             <i>"MIDE-OS turned my vault into a living, local-first IDE. The Flow 🌊 chaining is 🤯."</i>
             <div class="note">— Early beta user</div>
@@ -2554,24 +2774,24 @@
             >
             <div class="note">— Community developer</div>
           </div>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <!-- Support -->
-    <section id="support" class="sec">
+      <!-- Support -->
+      <section id="support" class="sec">
         <h2>Join the MIDE-OS Mission</h2>
-      <div class="grid-2">
-        <div class="card">
+        <div class="grid-2">
+          <div class="card">
             <p class="mute">
-              The only time you pay us is when you feel like it.
-              MIDE-OS is 100% user-supported. No VC money. No corporate overlords. Just <b>Kaden McKeen</b> (the MIDE
-              Champion) building principled software that saves you money and respects your data. If MIDE-OS helps you
-              save time or cash, please consider sponsoring—even $5 keeps the lights on at this stage!
+              The only time you pay us is when you feel like it. MIDE-OS is 100% user-supported. No VC money. No
+              corporate overlords. Just <b>Kaden McKeen</b> (the MIDE Champion) building principled software that saves
+              you money and respects your data. If MIDE-OS helps you save time or cash, please consider sponsoring—even
+              $5 keeps the lights on at this stage!
             </p>
-          <div class="cost">
+            <div class="cost">
               <div class="bar" style="flex: 1 1 auto"><i></i></div>
-            <span class="note" id="costLabel">Loading cost coverage…</span>
-          </div>
+              <span class="note" id="costLabel">Loading cost coverage…</span>
+            </div>
             <a class="mide-mission" data-link="SPONSOR_URL" style="display: block; margin-top: 12px"
               ><span
                 style="-webkit-text-fill-color: initial; -webkit-background-clip: initial; background-clip: initial"
@@ -2579,24 +2799,24 @@
               >Sponsor MIDE-OS</a
             >
             <div class="btns" style="margin-top: 12px">
-            <a class="btn" href="#faq">Read the funding FAQ</a>
+              <a class="btn" href="#faq">Read the funding FAQ</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="kicker">Transparency</div>
+            <h3>Where your support goes</h3>
+            <ul class="list">
+              <li>LLM API costs (active development isn't cheap)</li>
+              <li>Continued development and maintenance</li>
+              <li>Community infrastructure and docs</li>
+              <li>Future: Security reviews for verified plugins</li>
+            </ul>
+            <p class="note">100% transparent. Always.</p>
           </div>
         </div>
-        <div class="card">
-          <div class="kicker">Transparency</div>
-          <h3>Where your support goes</h3>
-          <ul class="list">
-            <li>LLM API costs (active development isn't cheap)</li>
-            <li>Continued development and maintenance</li>
-            <li>Community infrastructure and docs</li>
-            <li>Future: Security reviews for verified plugins</li>
-          </ul>
-          <p class="note">100% transparent. Always.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Optimization Philosophy -->
+      <!-- Optimization Philosophy -->
       <section class="sec" style="padding: 36px 0">
         <div style="text-align: center; margin-bottom: 32px">
           <p style="font-size: 20px; font-weight: 600; margin: 0; color: var(--text)">
@@ -2610,96 +2830,96 @@
               "
               >💯</span
             ><i>Who doesn't appreciate a <span style="color: var(--ok)">good</span> optimization?</i>
-        </p>
-      </div>
-      
+          </p>
+        </div>
+
         <div class="grid-2" style="align-items: start">
-        <!-- Maximize Card -->
+          <!-- Maximize Card -->
           <div class="card" style="border-left: 3px solid var(--ok); position: relative; overflow: hidden">
             <div style="position: absolute; top: 10px; right: 10px; font-size: 48px; opacity: 0.1; filter: blur(1px)">
               ⏫
             </div>
             <h2 style="color: var(--ok); margin: 0 0 16px; display: flex; align-items: center; gap: 8px">
-            We Maximize:
-          </h2>
+              We Maximize:
+            </h2>
             <ul class="list" style="margin: 0">
-            <li><b>Your quality of (AI-powered) life</b></li>
-            <li><b>Transparency</b> in every way that doesn't negatively impact security</li>
-            <li><b>Social Good</b> via significant funding of Public Foundations</li>
-          </ul>
-        </div>
+              <li><b>Your quality of (AI-powered) life</b></li>
+              <li><b>Transparency</b> in every way that doesn't negatively impact security</li>
+              <li><b>Social Good</b> via significant funding of Public Foundations</li>
+            </ul>
+          </div>
 
-        <!-- Minimize Card -->
+          <!-- Minimize Card -->
           <div class="card" style="border-right: 3px solid var(--bad); position: relative; overflow: hidden">
             <div style="position: absolute; top: 10px; right: 10px; font-size: 48px; opacity: 0.1; filter: blur(1px)">
               ⏬
             </div>
             <h2 style="color: var(--bad); margin: 0 0 16px; display: flex; align-items: center; gap: 8px">
-            We Minimize:
-          </h2>
+              We Minimize:
+            </h2>
             <ul class="list" style="margin: 0">
-            <li><b>Corporate greed</b> which could endanger our mission</li>
-            <li><b>Your learning curve</b></li>
-            <li><b>Security risks</b></li>
-          </ul>
+              <li><b>Corporate greed</b> which could endanger our mission</li>
+              <li><b>Your learning curve</b></li>
+              <li><b>Security risks</b></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="sec">
-      <h2>FAQ</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Is MIDE-OS free?</h3>
+      <!-- FAQ -->
+      <section id="faq" class="sec">
+        <h2>FAQ</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Is MIDE-OS free?</h3>
             <p class="mute">
               <b>Yes. Forever.</b> No payments. No fees. No ads. No data harvesting. No catch! We're 100%
               user-supported.
             </p>
-        </div>
-        <div class="card">
-          <h3>How do plugins update?</h3>
+          </div>
+          <div class="card">
+            <h3>How do plugins update?</h3>
             <p class="mute">
               Like any Obsidian plugin. One click through Community Plugins. All your MIDE automations update together.
               Simple.
             </p>
-        </div>
-        <div class="card">
-          <h3>Will things break?</h3>
-          <p class="mute">Nope. Semantic versioning and backwards compatibility. We won't pull the rug out.</p>
-        </div>
-        <div class="card">
-          <h3>Is it safe?</h3>
-          <p class="mute">
+          </div>
+          <div class="card">
+            <h3>Will things break?</h3>
+            <p class="mute">Nope. Semantic versioning and backwards compatibility. We won't pull the rug out.</p>
+          </div>
+          <div class="card">
+            <h3>Is it safe?</h3>
+            <p class="mute">
               Yes. Self-hosting with permission prompts, plugin verification, and prompt-safety linting means<br />
               <span style="display: block; text-align: center"><b>You control what runs.</b></span>
-          </p>
-        </div>
-        <div class="card">
-          <h3>What's "local-first"?</h3>
-          <p class="mute">Runs on <b>your</b> machine. No cloud. No tracking. Your vault, your data, your rules.</p>
-        </div>
-        <div class="card">
-          <h3>Who's the MIDE Champion?</h3>
+            </p>
+          </div>
+          <div class="card">
+            <h3>What's "local-first"?</h3>
+            <p class="mute">Runs on <b>your</b> machine. No cloud. No tracking. Your vault, your data, your rules.</p>
+          </div>
+          <div class="card">
+            <h3>Who's the MIDE Champion?</h3>
             <p class="mute">
               Kaden McKeen. Solo dev. No corporate interests. Built to stay mission-focused and principled through
               community support.
             </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="foot">
-      <div>© <span id="yr"></span> MIDE-OS Inc. Built with love for all ❤️</div>
-      <div class="note">Championed by Kaden McKeen. 100% user-supported, local-first, local-first.</div>
+      <div class="foot">
+        <div>© <span id="yr"></span> MIDE-OS Inc. Built with love for all ❤️</div>
+        <div class="note">Championed by Kaden McKeen. 100% user-supported, local-first, local-first.</div>
         <div class="note" style="margin-top: 8px"><b>Think once. Automate forever.</b></div>
+      </div>
     </div>
-  </div>
 
-  <!-- Modal -->
-  <div id="mideModal" class="modal" onclick="if(event.target===this) this.classList.remove('show')">
+    <!-- Modal -->
+    <div id="mideModal" class="modal" onclick="if(event.target===this) this.classList.remove('show')">
       <div class="modal-content" style="text-align: center">
-      <span class="modal-close" onclick="document.getElementById('mideModal').classList.remove('show')">&times;</span>
+        <span class="modal-close" onclick="document.getElementById('mideModal').classList.remove('show')">&times;</span>
         <h3
           style="
             font-size: 24px;
@@ -2714,8 +2934,8 @@
           <span style="-webkit-text-fill-color: initial">👉 </span>Our Flows Live in MIDE-OS!
         </h3>
         <p style="color: var(--text); margin: 0 0 28px; font-size: 16px; line-height: 1.6">
-        Did we mention? <i>It's a one-click install.</i>
-      </p>
+          Did we mention? <i>It's a one-click install.</i>
+        </p>
         <div style="display: flex; justify-content: center; align-items: center; gap: 16px; position: relative">
           <a class="btn primary" data-link="INSTALL_URL" style="text-decoration: none">⬇️ Install MIDE-OS</a>
           <span
@@ -2729,8 +2949,8 @@
             "
             >😲</span
           >
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
