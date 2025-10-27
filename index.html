@@ -226,11 +226,33 @@
       * {
         box-sizing: border-box;
       }
+      @keyframes subtleWave {
+        0%, 100% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 0% 100%;
+        }
+      }
       html,
       body {
         margin: 0;
         height: 100%;
-        background: linear-gradient(180deg, #0b0f14 0%, #0b0f14 60%, #070a0f 100%);
+        background: 
+          linear-gradient(180deg, 
+            #0b0f14 0%, 
+            #111827 10%,
+            #0b0f14 20%,
+            #111827 30%,
+            #0b0f14 40%,
+            #111827 50%,
+            #0b0f14 60%,
+            #111827 70%,
+            #0b0f14 80%,
+            #111827 90%,
+            #0b0f14 100%);
+        background-size: 100% 2000%;
+        animation: subtleWave 120s ease-in-out infinite;
         color: var(--text);
         font-family:
           Inter,
@@ -1091,9 +1113,9 @@
         </p>
          <a href="#community" class="mide-mission">Install MIDE-OS 🚀 Join the Mission</a>
          <div class="badges" style="justify-content: center">
-           <span class="pill">🏠 Self-hosted</span>
+          <span class="pill">🏠 Self-hosted</span>
            <span class="pill">🛡️ Security-forward</span>
-           <span class="pill">🔄 AI Provider-agnostic</span>
+          <span class="pill">🔄 AI Provider-agnostic</span>
            <span class="pill">⚡️ Dynamic, never-ending context</span>
          </div>
          <div class="btns" style="justify-content: center">
@@ -1389,7 +1411,7 @@
                 FLOWS CHAIN...
               </div>
                 <p style="color: var(--text); margin: 0 0 6px; font-size: 16px; font-weight: 600">
-                Procedural Flow Chaining
+                Procedural User-Driven Flow Chaining
               </p>
                 <p style="margin: 0; font-weight: 800; font-size: 14px; color: var(--brand)">
                 Advanced • Limitless • Dependable
